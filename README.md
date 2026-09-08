@@ -17,3 +17,8 @@ Google Apps Script Web App URL is preconfigured in the app:
 https://script.google.com/macros/s/AKfycbwSKFmz2JlmxOrW3hpW-rlf2MvQdIJa6ZnmutHgCEg66aPi5NtdlibcFPdnOoPNY5aL/exec
 
 The user only needs to enter the same private SYNC_KEY that was set in Apps Script Project Settings -> Script Properties, then tap Save & Sync Now. Do not share the key.
+
+## V13 automatic employee sync
+- GitHub Actions injects the repository secret `SYNC_KEY` only during APK build.
+- The employee-facing app no longer asks for the Google Apps Script URL or Sync Key.
+- Google Sheets sync is enabled automatically for all users.

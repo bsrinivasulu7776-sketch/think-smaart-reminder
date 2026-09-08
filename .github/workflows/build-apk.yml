@@ -19,6 +19,25 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
+      - name: Inject hidden Google Sheets sync key
+        env:
+          THINK_SMAART_SYNC_KEY: ${{ secrets.SYNC_KEY }}
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+          p = Path('app/src/main/assets/web/index.html')
+          text = p.read_text(encoding='utf-8')
+          token = '__THINK_SMAART_SYNC_KEY__'
+          key = os.environ.get('THINK_SMAART_SYNC_KEY', '')
+          if token in text:
+              if not key:
+                  raise SystemExit('SYNC_KEY repository secret is missing')
+              p.write_text(text.replace(token, key), encoding='utf-8')
+              print('Hidden sync configuration injected')
+          else:
+              print('No sync placeholder found; continuing')
+          PY
       - name: Build installable debug APK
         run: gradle :app:assembleDebug --stacktrace
       - uses: actions/upload-artifact@v4

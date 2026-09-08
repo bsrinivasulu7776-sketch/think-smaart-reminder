@@ -313,11 +313,9 @@ body{display:flex;justify-content:center;align-items:flex-start;background:radia
   <button class="primary" id="profileSave">Save Profile</button>
 </div></div>
 <div class="modal-backdrop" id="syncModal"><div class="sheet"><div class="sheet-handle"></div><h3>Google Sheets Sync</h3>
-  <div class="sync-status"><div class="sync-dot" id="syncDot"></div><div><b id="syncStatusTitle">Not connected</b><span id="syncStatusText">Connect your Think Smaart Google Sheet Web App URL.</span></div></div>
-  <div class="field"><label>Google Apps Script Web App URL</label><input class="control" id="syncUrl" type="url" placeholder="https://script.google.com/macros/s/.../exec"></div>
-  <div class="field"><label>Sync Key</label><input class="control" id="syncKey" type="password" placeholder="Same secret key used in Code.gs"></div>
-  <div class="sync-help"><strong>Connected Sheet:</strong> Think Smaart Reminder (your Google Drive).<br><strong>Automatic sync:</strong> profile photo, signup user, Work, Payment, Delivery, Follow-up, Vendor, Water and Health Schedule data are sent to your Drive Sheet. Each user also gets a separate sheet tab.</div>
-  <button class="primary" id="saveSyncSettings">Save &amp; Sync Now</button>
+  <div class="sync-status"><div class="sync-dot" id="syncDot"></div><div><b id="syncStatusTitle">Automatic Sync</b><span id="syncStatusText">Think Smaart secure sync is managed automatically.</span></div></div>
+  <div class="sync-help"><strong>Connected Sheet:</strong> Think Smaart Reminder (Owner Google Drive).<br><strong>Zero employee setup:</strong> employees do not need to enter a URL or Sync Key.<br><strong>Automatic sync:</strong> profile, signup user, Work, Payment, Delivery, Follow-up, Vendor, Water and Health Schedule data are sent to the owner Sheet. Each user is stored separately.</div>
+  <button class="primary" id="saveSyncSettings">Sync Now</button>
 </div></div>
 <div class="modal-backdrop" id="healthScheduleModal"><div class="sheet"><div class="sheet-handle"></div><h3>Meals &amp; Lunch Break</h3>
   <div class="health-switch"><div><b>Daily Health Alarms</b><small>Breakfast, lunch, back-to-work and dinner popup alarms</small></div><label class="toggle"><input type="checkbox" id="healthEnabled" checked><span class="toggle-slider"></span></label></div>
@@ -439,8 +437,11 @@ const DEFAULT_SOUND={mode:'bell',customName:'',volume:85,vibrate:true};
 const DEFAULT_HEALTH={enabled:true,breakfast:'08:00',lunch:'13:00',dinner:'20:00',breakMinutes:90};
 let profile={name:'Srinivasulu',email:'thinksmaart.tpt@gmail.com',userId:'owner',role:'Owner',photo:''};
 let tasks=[],water={...DEFAULT_WATER},soundSettings={...DEFAULT_SOUND},healthSchedule={...DEFAULT_HEALTH};
-let syncSettings=store.get('ts_sync_settings',{url:'https://script.google.com/macros/s/AKfycbwSKFmz2JlmxOrW3hpW-rlf2MvQdIJa6ZnmutHgCEg66aPi5NtdlibcFPdnOoPNY5aL/exec',key:'',enabled:true,lastAt:0,lastOk:false,lastMessage:'Web App connected'});
-if(!syncSettings.url){syncSettings.url='https://script.google.com/macros/s/AKfycbwSKFmz2JlmxOrW3hpW-rlf2MvQdIJa6ZnmutHgCEg66aPi5NtdlibcFPdnOoPNY5aL/exec';syncSettings.enabled=true;syncSettings.lastMessage='Web App connected';store.set('ts_sync_settings',syncSettings);}
+const BUILT_IN_SYNC_URL='https://script.google.com/macros/s/AKfycbwSKFmz2JlmxOrW3hpW-rlf2MvQdIJa6ZnmutHgCEg66aPi5NtdlibcFPdnOoPNY5aL/exec';
+const BUILT_IN_SYNC_KEY='__THINK_SMAART_SYNC_KEY__';
+let syncSettings=store.get('ts_sync_settings',{url:BUILT_IN_SYNC_URL,key:BUILT_IN_SYNC_KEY,enabled:true,lastAt:0,lastOk:false,lastMessage:'Automatic sync enabled'});
+syncSettings={...syncSettings,url:BUILT_IN_SYNC_URL,key:BUILT_IN_SYNC_KEY,enabled:true,lastMessage:syncSettings.lastMessage||'Automatic sync enabled'};
+store.set('ts_sync_settings',syncSettings);
 let syncTimer=null;
 function scopedKey(base,uid=(profile.userId||'owner')){return `${base}_${uid}`}
 function scopedGet(base,fallback){return store.get(scopedKey(base),fallback)}
@@ -505,7 +506,7 @@ function nativeSyncAll(){
 function publicProfile(){return {userId:profile.userId||'owner',name:profile.name||'',email:profile.email||'',phone:profile.phone||'',role:profile.role||'User',photoSet:!!profile.photo,photoData:profile.photo||''}}
 function buildSyncPayload(reason='auto'){
   return {
-    app:'Think Smaart Reminder',appVersion:'1.4.1',reason,sentAt:new Date().toISOString(),
+    app:'Think Smaart Reminder',appVersion:'1.5.0',reason,sentAt:new Date().toISOString(),
     deviceId:store.get('ts_device_id','')||(()=>{const id='dev_'+Date.now()+'_'+Math.random().toString(36).slice(2,9);store.set('ts_device_id',id);return id})(),
     syncKey:syncSettings.key||'',
     user:publicProfile(),
@@ -539,11 +540,10 @@ window.onNativeSyncResult=function(ok,message){
 }
 function formatSyncTime(ts){if(!ts)return '';try{return new Date(ts).toLocaleString([], {day:'2-digit',month:'short',hour:'numeric',minute:'2-digit'})}catch{return ''}}
 function renderSyncModal(){
-  $('#syncUrl').value=syncSettings.url||'';$('#syncKey').value=syncSettings.key||'';
-  const connected=!!syncSettings.url,ok=connected&&syncSettings.lastOk;
+  const connected=!!syncSettings.url&&!!syncSettings.key,ok=connected&&syncSettings.lastOk;
   $('#syncDot').className='sync-dot '+(ok?'ok':(connected&&syncSettings.lastAt?'err':''));
-  $('#syncStatusTitle').textContent=!connected?'Not connected':ok?'Connected & Synced':'Connected';
-  $('#syncStatusText').textContent=!connected?'Paste the Apps Script Web App URL below.':(syncSettings.lastAt?`${syncSettings.lastMessage} • ${formatSyncTime(syncSettings.lastAt)}`:'Ready to sync');
+  $('#syncStatusTitle').textContent=ok?'Automatic Sync • Synced':'Automatic Sync • Enabled';
+  $('#syncStatusText').textContent=syncSettings.lastAt?`${syncSettings.lastMessage} • ${formatSyncTime(syncSettings.lastAt)}`:'No setup required. Data syncs automatically.';
 }
 
 function iconHtml(cat,small=false){const info=CATEGORY_INFO[cat]||CATEGORY_INFO.Work;if(info.icon==='rupee')return `<span class="${small?'tiny-icon':'cat-icon'} ${small?'':'rupee'} ${small?'':info.cls}">₹</span>`;return `<span class="${small?'tiny-icon':'cat-icon'} ${small?'':info.cls}">${ICONS[info.icon]}</span>`}
@@ -809,7 +809,7 @@ $('#healthScheduleModal').addEventListener('click',e=>{if(e.target===$('#healthS
 $('#lunchTime').addEventListener('input',updateHealthPreview);$('#lunchBreakMinutes').addEventListener('input',updateHealthPreview);
 $('#saveHealthSchedule').addEventListener('click',()=>{healthSchedule={enabled:$('#healthEnabled').checked,breakfast:$('#breakfastTime').value||'08:00',lunch:$('#lunchTime').value||'13:00',dinner:$('#dinnerTime').value||'20:00',breakMinutes:Math.max(15,Math.min(240,Number($('#lunchBreakMinutes').value)||90))};saveHealth('health_schedule_changed');nativeRequestPermissions();nativeScheduleHealth();renderSettings();$('#healthScheduleModal').classList.remove('show');toast(healthSchedule.enabled?'Daily meal & back-to-work alarms saved':'Health alarms turned off')});
 $('#syncModal').addEventListener('click',e=>{if(e.target===$('#syncModal'))$('#syncModal').classList.remove('show')});
-$('#saveSyncSettings').addEventListener('click',()=>{const url=$('#syncUrl').value.trim(),key=$('#syncKey').value.trim();if(url&&!/^https:\/\/script\.google\.com\//i.test(url)){toast('Valid Google Apps Script Web App URL enter cheyyandi.');return}syncSettings={...syncSettings,url,key,enabled:!!url,lastOk:false,lastMessage:url?'Ready to sync':'Not connected'};store.set('ts_sync_settings',syncSettings);try{if(nativeAndroid())window.NativeApp.setGoogleSheetsConfig(url,key)}catch{}renderSettings();renderSyncModal();if(url)cloudSync('manual_setup',true);else toast('Google Sheets sync disconnected')});$('#soundSetting').addEventListener('click',openSoundSettings);$('#themeSetting').addEventListener('click',()=>toast('Think Smaart logo-colour theme active'));$('#aboutApp').addEventListener('click',()=>toast('Think Smaart Reminder • Business + Water + Health Schedule'));
+$('#saveSyncSettings').addEventListener('click',()=>{syncSettings={...syncSettings,url:BUILT_IN_SYNC_URL,key:BUILT_IN_SYNC_KEY,enabled:true,lastOk:false,lastMessage:'Syncing...'};store.set('ts_sync_settings',syncSettings);try{if(nativeAndroid())window.NativeApp.setGoogleSheetsConfig(BUILT_IN_SYNC_URL,BUILT_IN_SYNC_KEY)}catch{}renderSettings();renderSyncModal();cloudSync('manual_sync',true)});$('#soundSetting').addEventListener('click',openSoundSettings);$('#themeSetting').addEventListener('click',()=>toast('Think Smaart logo-colour theme active'));$('#aboutApp').addEventListener('click',()=>toast('Think Smaart Reminder • Business + Water + Health Schedule'));
 $('#soundModal').addEventListener('click',e=>{if(e.target===$('#soundModal'))closeSoundSettings()});
 $('#soundChoices').addEventListener('click',e=>{const b=e.target.closest('[data-sound-mode]');if(!b)return;soundSettings.mode=b.dataset.soundMode;$$('#soundChoices .sound-choice').forEach(x=>x.classList.toggle('active',x===b));$('#soundCurrentTitle').textContent=soundLabel(soundSettings.mode);$('#soundCurrentFile').textContent=soundSettings.mode==='custom'?(soundSettings.customName||'Upload your sound below'):'Built-in reminder sound'});
 $('#customSoundFile').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;if(file.size>25*1024*1024){toast('Sound file 25 MB kanna takkuva undali.');e.target.value='';return}if(file.type&&!file.type.startsWith('audio/')){toast('Audio file select cheyyandi.');e.target.value='';return}try{await saveCustomSoundBlob(file);soundSettings.customName=file.name;soundSettings.mode='custom';saveSound('sound_changed');if(nativeAndroid()){const reader=new FileReader();reader.onload=()=>{try{window.NativeApp.saveCustomSound(String(reader.result||''),file.type||'audio/*',file.name)}catch{}};reader.readAsDataURL(file)}$('#customSoundFileName').textContent=file.name;$('#soundCurrentTitle').textContent=file.name;$('#soundCurrentFile').textContent='My custom reminder sound';$('#removeCustomSound').disabled=false;$$('#soundChoices .sound-choice').forEach(x=>x.classList.toggle('active',x.dataset.soundMode==='custom'));toast('Custom sound added');await playReminderSound(true)}catch{toast('Sound save avvaledu. Vere audio file try cheyyandi.')}});
