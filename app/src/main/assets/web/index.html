@@ -154,7 +154,7 @@ body{display:flex;justify-content:center;align-items:flex-start;background:radia
       <div class="login-sub">Sign in to continue to Think Smaart Reminder.</div>
       <div class="login-field"><label>Username / Email</label><div class="login-input-wrap"><span class="li-icon">♙</span><input id="loginUser" autocomplete="username" placeholder="Name or email" value="Srinivasulu"><span></span></div></div>
       <div class="login-field"><label>Password</label><div class="login-input-wrap"><span class="li-icon">🔒</span><input id="loginPassword" type="password" autocomplete="current-password" placeholder="Enter password"><button type="button" class="password-eye" id="togglePassword" aria-label="Show password">◉</button></div></div>
-      <div class="login-options"><label class="remember"><input type="checkbox" id="rememberLogin" checked> Remember me</label><button type="button" class="login-help" id="loginHelp">Login Help</button></div>
+      <div class="login-options"><label class="remember"><input type="checkbox" id="rememberLogin" checked> Remember me</label><button type="button" class="login-help" id="openForgot">Forgot Password?</button></div>
       <button class="login-btn" type="submit">Login</button>
       <div class="login-error" id="loginError"></div>
       <div class="auth-switch">Don't have an account? <button type="button" id="openSignup">Sign Up</button></div>
@@ -168,14 +168,29 @@ body{display:flex;justify-content:center;align-items:flex-start;background:radia
       <div class="login-field"><label>Email ID</label><div class="login-input-wrap"><span class="li-icon">✉</span><input id="signupEmail" type="email" autocomplete="email" placeholder="name@example.com"><span></span></div></div>
       <div class="login-field"><label>Mobile Number</label><div class="login-input-wrap"><span class="li-icon">☎</span><input id="signupPhone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="10" placeholder="10 digit mobile number"><span></span></div></div>
       <div class="signup-grid">
-        <div class="login-field"><label>Password</label><div class="login-input-wrap"><span class="li-icon">🔒</span><input id="signupPassword" type="password" autocomplete="new-password" placeholder="Min 4 chars"><button type="button" class="password-eye" id="toggleSignupPassword" aria-label="Show password">◉</button></div></div>
+        <div class="login-field"><label>Password</label><div class="login-input-wrap"><span class="li-icon">🔒</span><input id="signupPassword" type="password" autocomplete="new-password" placeholder="Min 6 chars"><button type="button" class="password-eye" id="toggleSignupPassword" aria-label="Show password">◉</button></div></div>
         <div class="login-field"><label>Confirm</label><div class="login-input-wrap"><span class="li-icon">✓</span><input id="signupConfirm" type="password" autocomplete="new-password" placeholder="Re-enter"><span></span></div></div>
       </div>
-      <div class="signup-hint">Your account is saved on this device in this version. Google Sheets/cloud sync can be connected later.</div>
+      <div class="signup-hint">Account details are securely registered to Think Smaart cloud sync. Password is protected; it is never stored as readable text in Google Sheets.</div>
       <button class="login-btn" type="submit">Create Account</button>
       <div class="login-error" id="signupError"></div>
       <div class="auth-switch">Already have an account? <button type="button" id="openLogin">Login</button></div>
       <div class="signup-terms">By creating an account, you can use all Think Smaart Reminder features.</div>
+    </form>
+
+    <form class="login-card auth-hidden" id="forgotForm">
+      <h2>Forgot Password</h2>
+      <div class="login-sub">Registered email ki 6-digit reset code pampistam.</div>
+      <div class="login-field"><label>Registered Email</label><div class="login-input-wrap"><span class="li-icon">✉</span><input id="forgotEmail" type="email" autocomplete="email" placeholder="name@example.com"><span></span></div></div>
+      <button class="login-btn" type="button" id="sendResetCode">Send Reset Code</button>
+      <div id="resetFields" class="auth-hidden">
+        <div class="login-field"><label>6-digit Code</label><div class="login-input-wrap"><span class="li-icon">#</span><input id="resetCode" inputmode="numeric" maxlength="6" placeholder="Enter code"><span></span></div></div>
+        <div class="login-field"><label>New Password</label><div class="login-input-wrap"><span class="li-icon">🔒</span><input id="resetNewPassword" type="password" autocomplete="new-password" placeholder="Minimum 6 characters"><span></span></div></div>
+        <div class="login-field"><label>Confirm Password</label><div class="login-input-wrap"><span class="li-icon">✓</span><input id="resetConfirmPassword" type="password" autocomplete="new-password" placeholder="Re-enter password"><span></span></div></div>
+        <button class="login-btn" type="button" id="resetPasswordBtn">Reset Password</button>
+      </div>
+      <div class="login-error" id="forgotError"></div>
+      <div class="auth-switch">Remembered your password? <button type="button" id="forgotBackLogin">Back to Login</button></div>
     </form>
     <div class="login-footer">Stay Organized • Stay Healthy • Stay Ahead</div>
   </section>
@@ -437,8 +452,9 @@ const DEFAULT_SOUND={mode:'bell',customName:'',volume:85,vibrate:true};
 const DEFAULT_HEALTH={enabled:true,breakfast:'08:00',lunch:'13:00',dinner:'20:00',breakMinutes:90};
 let profile={name:'Srinivasulu',email:'thinksmaart.tpt@gmail.com',userId:'owner',role:'Owner',photo:''};
 let tasks=[],water={...DEFAULT_WATER},soundSettings={...DEFAULT_SOUND},healthSchedule={...DEFAULT_HEALTH};
-const BUILT_IN_SYNC_URL='https://script.google.com/macros/s/AKfycbwSKFmz2JlmxOrW3hpW-rlf2MvQdIJa6ZnmutHgCEg66aPi5NtdlibcFPdnOoPNY5aL/exec';
-const BUILT_IN_SYNC_KEY='__THINK_SMAART_SYNC_KEY__';
+const FALLBACK_SYNC_URL='https://script.google.com/macros/s/AKfycbwSKFmz2JlmxOrW3hpW-rlf2MvQdIJa6ZnmutHgCEg66aPi5NtdlibcFPdnOoPNY5aL/exec';
+const BUILT_IN_SYNC_URL=(()=>{try{return (window.NativeApp&&typeof window.NativeApp.getBuiltInSyncUrl==='function'&&window.NativeApp.getBuiltInSyncUrl())||FALLBACK_SYNC_URL}catch{return FALLBACK_SYNC_URL}})();
+const BUILT_IN_SYNC_KEY=(()=>{try{return (window.NativeApp&&typeof window.NativeApp.getBuiltInSyncKey==='function'&&window.NativeApp.getBuiltInSyncKey())||''}catch{return ''}})();
 let syncSettings=store.get('ts_sync_settings',{url:BUILT_IN_SYNC_URL,key:BUILT_IN_SYNC_KEY,enabled:true,lastAt:0,lastOk:false,lastMessage:'Automatic sync enabled'});
 syncSettings={...syncSettings,url:BUILT_IN_SYNC_URL,key:BUILT_IN_SYNC_KEY,enabled:true,lastMessage:syncSettings.lastMessage||'Automatic sync enabled'};
 store.set('ts_sync_settings',syncSettings);
@@ -503,10 +519,30 @@ function nativeSyncAll(){
   }catch(e){}
 }
 
+const backendPending=new Map();
+let backendSeq=0;
+window.onNativeBackendResult=function(requestId,ok,responseText){
+  const rec=backendPending.get(String(requestId));if(!rec)return;
+  backendPending.delete(String(requestId));clearTimeout(rec.timer);
+  try{const data=JSON.parse(responseText||'{}');if(ok||data)rec.resolve(data);else rec.reject(new Error('Backend request failed'))}
+  catch(e){if(ok)rec.resolve({ok:false,error:'Invalid server response'});else rec.reject(e)}
+};
+function backendRequest(action,data={}){
+  const payload={action,syncKey:BUILT_IN_SYNC_KEY,...data,appVersion:'14.0',deviceId:store.get('ts_device_id','')||''};
+  if(nativeAndroid()&&typeof window.NativeApp.backendRequest==='function'){
+    return new Promise((resolve,reject)=>{
+      const id='req_'+Date.now()+'_'+(++backendSeq);const timer=setTimeout(()=>{backendPending.delete(id);reject(new Error('Request timeout'))},25000);
+      backendPending.set(id,{resolve,reject,timer});
+      try{window.NativeApp.backendRequest(id,JSON.stringify(payload))}catch(e){clearTimeout(timer);backendPending.delete(id);reject(e)}
+    });
+  }
+  return fetch(BUILT_IN_SYNC_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
+    .then(r=>r.text()).then(t=>JSON.parse(t||'{}'));
+}
 function publicProfile(){return {userId:profile.userId||'owner',name:profile.name||'',email:profile.email||'',phone:profile.phone||'',role:profile.role||'User',photoSet:!!profile.photo,photoData:profile.photo||''}}
 function buildSyncPayload(reason='auto'){
   return {
-    app:'Think Smaart Reminder',appVersion:'1.5.0',reason,sentAt:new Date().toISOString(),
+    app:'Think Smaart Reminder',appVersion:'14.0',reason,sentAt:new Date().toISOString(),
     deviceId:store.get('ts_device_id','')||(()=>{const id='dev_'+Date.now()+'_'+Math.random().toString(36).slice(2,9);store.set('ts_device_id',id);return id})(),
     syncKey:syncSettings.key||'',
     user:publicProfile(),
@@ -692,7 +728,7 @@ function checkDueNotifications(){if(nativeAndroid())return;const now=Date.now();
 function exportBackup(){const blob=new Blob([JSON.stringify({profile,tasks,water,soundSettings,exportedAt:new Date().toISOString()},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='think-smaart-reminder-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast('Backup exported')}
 
 
-// local accounts + signup
+// local account cache + secure cloud authentication
 const DEFAULT_PASSWORD='1234';
 function getUsers(){
   let users=store.get('ts_users',null);
@@ -706,15 +742,16 @@ function getUsers(){
 function setUsers(users){store.set('ts_users',users)}
 function loggedIn(){try{return localStorage.getItem('ts_logged_in')==='1'||sessionStorage.getItem('ts_logged_in')==='1'}catch{return false}}
 function showAuthError(id,msg){const el=$(id);if(!el)return;el.textContent=msg;el.classList.toggle('show',!!msg)}
-function clearAuthErrors(){showAuthError('#loginError','');showAuthError('#signupError','')}
+function clearAuthErrors(){showAuthError('#loginError','');showAuthError('#signupError','');showAuthError('#forgotError','')}
 function showAuthMode(mode='login'){
-  const signup=mode==='signup';
-  $('#loginForm').classList.toggle('auth-hidden',signup);
+  const signup=mode==='signup',forgot=mode==='forgot';
+  $('#loginForm').classList.toggle('auth-hidden',signup||forgot);
   $('#signupForm').classList.toggle('auth-hidden',!signup);
-  $('#authHeroTitle').textContent=signup?'Create Account':'Welcome Back';
-  $('#authHeroSub').textContent=signup?'Join Think Smaart Reminder':'Business & Water Reminder';
+  $('#forgotForm').classList.toggle('auth-hidden',!forgot);
+  $('#authHeroTitle').textContent=signup?'Create Account':forgot?'Reset Password':'Welcome Back';
+  $('#authHeroSub').textContent=signup?'Join Think Smaart Reminder':forgot?'Secure account recovery':'Business & Water Reminder';
   clearAuthErrors();
-  setTimeout(()=>{const el=signup?$('#signupName'):$('#loginUser');if(el)el.focus()},120);
+  setTimeout(()=>{const el=signup?$('#signupName'):forgot?$('#forgotEmail'):$('#loginUser');if(el)el.focus()},120);
 }
 function enterApp(){
   $('#loginScreen').classList.add('hidden');
@@ -730,41 +767,76 @@ function showLogin(){
   $('#loginPassword').value='';
 }
 function logoutUser(){showLogin();toast('Logged out')}
-function tryLogin(){
-  const u=$('#loginUser').value.trim().toLowerCase();
-  const p=$('#loginPassword').value;
-  if(!u||!p){showAuthError('#loginError','Username / email and password enter cheyyandi.');return false}
-  const users=getUsers();
-  const user=users.find(x=>String(x.email||'').toLowerCase()===u||String(x.name||'').toLowerCase()===u);
-  if(!user||p!==String(user.password||'')){showAuthError('#loginError','Username / password correct ga enter cheyyandi.');return false}
-  loadUserData(user);
-  saveProfile();
-  try{
-    localStorage.setItem('ts_current_user',user.id);
-    if($('#rememberLogin').checked){localStorage.setItem('ts_logged_in','1');sessionStorage.removeItem('ts_logged_in')}
-    else{sessionStorage.setItem('ts_logged_in','1');localStorage.removeItem('ts_logged_in')}
-  }catch{}
-  renderAllData();enterApp();queueCloudSync('login');toast('Welcome '+profile.name);return true
+async function hashLocalPassword(userId,password){
+  try{const b=new TextEncoder().encode(String(userId)+'|'+String(password));const d=await crypto.subtle.digest('SHA-256',b);return Array.from(new Uint8Array(d)).map(x=>x.toString(16).padStart(2,'0')).join('')}catch{return ''}
 }
-function trySignup(){
-  const name=$('#signupName').value.trim();
-  const email=$('#signupEmail').value.trim().toLowerCase();
-  const phone=$('#signupPhone').value.replace(/\D/g,'');
-  const pwd=$('#signupPassword').value;
-  const confirm=$('#signupConfirm').value;
+async function saveLocalCredential(user,password){
+  const users=getUsers();let u=users.find(x=>x.id===user.id||String(x.email||'').toLowerCase()===String(user.email||'').toLowerCase());
+  const hash=await hashLocalPassword(user.id,password);const clean={...u,...user,localPasswordHash:hash};delete clean.password;
+  if(u)users[users.indexOf(u)]=clean;else users.push(clean);setUsers(users);return clean;
+}
+async function verifyLocalCredential(user,password){
+  if(!user)return false;
+  if(user.localPasswordHash){return user.localPasswordHash===await hashLocalPassword(user.id,password)}
+  if(user.password!=null&&String(user.password)===String(password)){await saveLocalCredential(user,password);return true}
+  return false;
+}
+function finishLogin(user,remember=true,snapshot=null){
+  loadUserData(user);
+  if(snapshot&&Array.isArray(snapshot.tasks)){tasks=snapshot.tasks.map(t=>({...t,reminderDate:t.reminderDate||t.date,reminderTime:t.reminderTime||t.time}));scopedSet('ts_tasks',tasks)}
+  if(snapshot&&snapshot.water){water={...DEFAULT_WATER,...snapshot.water};scopedSet('ts_water',water)}
+  if(snapshot&&snapshot.healthSchedule){healthSchedule={...DEFAULT_HEALTH,...snapshot.healthSchedule};scopedSet('ts_health_schedule',healthSchedule)}
+  saveProfile();
+  try{localStorage.setItem('ts_current_user',user.id);if(remember){localStorage.setItem('ts_logged_in','1');sessionStorage.removeItem('ts_logged_in')}else{sessionStorage.setItem('ts_logged_in','1');localStorage.removeItem('ts_logged_in')}}catch{}
+  renderAllData();enterApp();nativeSyncAll();queueCloudSync('login');toast('Welcome '+profile.name);
+}
+async function tryLogin(){
+  const u=$('#loginUser').value.trim();const p=$('#loginPassword').value;
+  if(!u||!p){showAuthError('#loginError','Username / email and password enter cheyyandi.');return false}
+  showAuthError('#loginError','');
+  const btn=$('#loginForm .login-btn');if(btn){btn.disabled=true;btn.textContent='Signing in...'}
+  let cloudMessage='';
+  try{
+    const res=await backendRequest('authLogin',{identifier:u,password:p});
+    if(res&&res.ok&&res.user){const local=await saveLocalCredential(res.user,p);finishLogin(local,$('#rememberLogin').checked,res.snapshot||null);return true}
+    cloudMessage=(res&&res.error)||'';
+  }catch(e){cloudMessage='Internet / server connection unavailable'}
+  const key=u.toLowerCase(),local=getUsers().find(x=>String(x.email||'').toLowerCase()===key||String(x.name||'').toLowerCase()===key||String(x.phone||'')===u.replace(/\D/g,''));
+  if(local&&await verifyLocalCredential(local,p)){finishLogin(local,$('#rememberLogin').checked,null);toast('Offline login • cloud sync reconnect ayyaka continue avuthundi');return true}
+  showAuthError('#loginError',cloudMessage||'Username / password correct ga enter cheyyandi.');
+  if(btn){btn.disabled=false;btn.textContent='Login'}return false
+}
+async function trySignup(){
+  const name=$('#signupName').value.trim(),email=$('#signupEmail').value.trim().toLowerCase(),phone=$('#signupPhone').value.replace(/\D/g,''),pwd=$('#signupPassword').value,confirm=$('#signupConfirm').value;
   const emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   if(name.length<2){showAuthError('#signupError','Full name enter cheyyandi.');return false}
   if(!emailOk){showAuthError('#signupError','Valid email ID enter cheyyandi.');return false}
   if(phone.length!==10){showAuthError('#signupError','10 digit mobile number enter cheyyandi.');return false}
-  if(pwd.length<4){showAuthError('#signupError','Password minimum 4 characters undali.');return false}
+  if(pwd.length<6){showAuthError('#signupError','Password minimum 6 characters undali.');return false}
   if(pwd!==confirm){showAuthError('#signupError','Password & Confirm Password match avvali.');return false}
-  const users=getUsers();
-  if(users.some(x=>String(x.email||'').toLowerCase()===email)){showAuthError('#signupError','Ee email tho account already undhi. Login cheyyandi.');return false}
-  const user={id:'user_'+Date.now(),name,email,phone,password:pwd,role:'User',createdAt:new Date().toISOString()};
-  users.push(user);setUsers(users);
-  loadUserData(user);profile={...profile,name,email,phone,userId:user.id,role:user.role};saveProfile();queueCloudSync('signup');
-  try{localStorage.setItem('ts_current_user',user.id);localStorage.setItem('ts_logged_in','1');sessionStorage.removeItem('ts_logged_in')}catch{}
-  renderAllData();enterApp();queueCloudSync('signup');toast('Account created successfully');return true
+  const btn=$('#signupForm .login-btn');if(btn){btn.disabled=true;btn.textContent='Creating Account...'}
+  try{
+    const res=await backendRequest('authSignup',{name,email,phone,password:pwd});
+    if(!res||!res.ok||!res.user)throw new Error((res&&res.error)||'Cloud signup backend not ready');
+    const user=await saveLocalCredential(res.user,pwd);loadUserData(user);profile={...profile,name:user.name,email:user.email,phone:user.phone,userId:user.id,role:user.role||'User'};saveProfile();
+    try{localStorage.setItem('ts_current_user',user.id);localStorage.setItem('ts_logged_in','1');sessionStorage.removeItem('ts_logged_in')}catch{}
+    renderAllData();enterApp();nativeSyncAll();queueCloudSync('signup');toast('Account created • Google Sheets registration saved');return true
+  }catch(e){showAuthError('#signupError',e.message||'Account create avvaledu. Internet check cheyyandi.');if(btn){btn.disabled=false;btn.textContent='Create Account'}return false}
+}
+async function sendResetCode(){
+  const email=$('#forgotEmail').value.trim().toLowerCase();if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showAuthError('#forgotError','Registered email enter cheyyandi.');return}
+  const b=$('#sendResetCode');b.disabled=true;b.textContent='Sending...';
+  try{const res=await backendRequest('authForgotRequest',{email});if(!res||!res.ok)throw new Error((res&&res.error)||'Reset code send avvaledu');$('#resetFields').classList.remove('auth-hidden');showAuthError('#forgotError','');toast('Reset code email ki pampincham');$('#resetCode').focus()}
+  catch(e){showAuthError('#forgotError',e.message||'Reset code send avvaledu')}
+  finally{b.disabled=false;b.textContent='Resend Reset Code'}
+}
+async function resetPassword(){
+  const email=$('#forgotEmail').value.trim().toLowerCase(),code=$('#resetCode').value.replace(/\D/g,''),pwd=$('#resetNewPassword').value,confirm=$('#resetConfirmPassword').value;
+  if(code.length!==6){showAuthError('#forgotError','6-digit reset code enter cheyyandi.');return}if(pwd.length<6){showAuthError('#forgotError','New password minimum 6 characters undali.');return}if(pwd!==confirm){showAuthError('#forgotError','New Password & Confirm match avvali.');return}
+  const b=$('#resetPasswordBtn');b.disabled=true;b.textContent='Resetting...';
+  try{const res=await backendRequest('authForgotReset',{email,code,newPassword:pwd});if(!res||!res.ok)throw new Error((res&&res.error)||'Password reset avvaledu');if(res.user)await saveLocalCredential(res.user,pwd);$('#loginUser').value=email;$('#loginPassword').value='';showAuthMode('login');toast('Password reset successful • ippudu login cheyyandi')}
+  catch(e){showAuthError('#forgotError',e.message||'Password reset avvaledu')}
+  finally{b.disabled=false;b.textContent='Reset Password'}
 }
 
 // events
@@ -772,9 +844,12 @@ $('#loginForm').addEventListener('submit',e=>{e.preventDefault();tryLogin()});
 $('#signupForm').addEventListener('submit',e=>{e.preventDefault();trySignup()});
 $('#openSignup').addEventListener('click',()=>showAuthMode('signup'));
 $('#openLogin').addEventListener('click',()=>showAuthMode('login'));
+$('#openForgot').addEventListener('click',()=>{const v=$('#loginUser').value.trim();if(v.includes('@'))$('#forgotEmail').value=v;showAuthMode('forgot')});
+$('#forgotBackLogin').addEventListener('click',()=>showAuthMode('login'));
+$('#sendResetCode').addEventListener('click',sendResetCode);
+$('#resetPasswordBtn').addEventListener('click',resetPassword);
 $('#togglePassword').addEventListener('click',()=>{const i=$('#loginPassword');i.type=i.type==='password'?'text':'password';$('#togglePassword').textContent=i.type==='password'?'◉':'◎'});
 $('#toggleSignupPassword').addEventListener('click',()=>{const i=$('#signupPassword');i.type=i.type==='password'?'text':'password';$('#toggleSignupPassword').textContent=i.type==='password'?'◉':'◎'});
-$('#loginHelp').addEventListener('click',()=>toast('Default owner: Srinivasulu • Password: 1234 • New user ayithe Sign Up use cheyyandi.'));
 $('#homeCategories').addEventListener('click',e=>{const b=e.target.closest('[data-cat]');if(b)openAdd(b.dataset.cat)});
 $('#typeStrip').addEventListener('click',e=>{const b=e.target.closest('[data-type]');if(!b)return;selectedType=b.dataset.type;if(selectedType==='Water'){showScreen('water');return}editTaskId=null;renderCategories();resetForm();renderCategoryForm()});
 $$('.priority-btn').forEach(b=>b.addEventListener('click',()=>{selectedPriority=b.dataset.priority;$$('.priority-btn').forEach(x=>x.classList.toggle('active',x===b))}));
@@ -809,7 +884,7 @@ $('#healthScheduleModal').addEventListener('click',e=>{if(e.target===$('#healthS
 $('#lunchTime').addEventListener('input',updateHealthPreview);$('#lunchBreakMinutes').addEventListener('input',updateHealthPreview);
 $('#saveHealthSchedule').addEventListener('click',()=>{healthSchedule={enabled:$('#healthEnabled').checked,breakfast:$('#breakfastTime').value||'08:00',lunch:$('#lunchTime').value||'13:00',dinner:$('#dinnerTime').value||'20:00',breakMinutes:Math.max(15,Math.min(240,Number($('#lunchBreakMinutes').value)||90))};saveHealth('health_schedule_changed');nativeRequestPermissions();nativeScheduleHealth();renderSettings();$('#healthScheduleModal').classList.remove('show');toast(healthSchedule.enabled?'Daily meal & back-to-work alarms saved':'Health alarms turned off')});
 $('#syncModal').addEventListener('click',e=>{if(e.target===$('#syncModal'))$('#syncModal').classList.remove('show')});
-$('#saveSyncSettings').addEventListener('click',()=>{syncSettings={...syncSettings,url:BUILT_IN_SYNC_URL,key:BUILT_IN_SYNC_KEY,enabled:true,lastOk:false,lastMessage:'Syncing...'};store.set('ts_sync_settings',syncSettings);try{if(nativeAndroid())window.NativeApp.setGoogleSheetsConfig(BUILT_IN_SYNC_URL,BUILT_IN_SYNC_KEY)}catch{}renderSettings();renderSyncModal();cloudSync('manual_sync',true)});$('#soundSetting').addEventListener('click',openSoundSettings);$('#themeSetting').addEventListener('click',()=>toast('Think Smaart logo-colour theme active'));$('#aboutApp').addEventListener('click',()=>toast('Think Smaart Reminder • Business + Water + Health Schedule'));
+$('#saveSyncSettings').addEventListener('click',()=>{syncSettings={...syncSettings,url:BUILT_IN_SYNC_URL,key:BUILT_IN_SYNC_KEY,enabled:true,lastOk:false,lastMessage:'Syncing...'};store.set('ts_sync_settings',syncSettings);try{if(nativeAndroid())window.NativeApp.setGoogleSheetsConfig(BUILT_IN_SYNC_URL,BUILT_IN_SYNC_KEY)}catch{}renderSettings();renderSyncModal();cloudSync('manual_sync',true)});$('#soundSetting').addEventListener('click',openSoundSettings);$('#themeSetting').addEventListener('click',()=>toast('Think Smaart logo-colour theme active'));$('#aboutApp').addEventListener('click',()=>toast('Think Smaart Reminder V14 • Auto UI updates enabled • Business + Water + Health'));
 $('#soundModal').addEventListener('click',e=>{if(e.target===$('#soundModal'))closeSoundSettings()});
 $('#soundChoices').addEventListener('click',e=>{const b=e.target.closest('[data-sound-mode]');if(!b)return;soundSettings.mode=b.dataset.soundMode;$$('#soundChoices .sound-choice').forEach(x=>x.classList.toggle('active',x===b));$('#soundCurrentTitle').textContent=soundLabel(soundSettings.mode);$('#soundCurrentFile').textContent=soundSettings.mode==='custom'?(soundSettings.customName||'Upload your sound below'):'Built-in reminder sound'});
 $('#customSoundFile').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;if(file.size>25*1024*1024){toast('Sound file 25 MB kanna takkuva undali.');e.target.value='';return}if(file.type&&!file.type.startsWith('audio/')){toast('Audio file select cheyyandi.');e.target.value='';return}try{await saveCustomSoundBlob(file);soundSettings.customName=file.name;soundSettings.mode='custom';saveSound('sound_changed');if(nativeAndroid()){const reader=new FileReader();reader.onload=()=>{try{window.NativeApp.saveCustomSound(String(reader.result||''),file.type||'audio/*',file.name)}catch{}};reader.readAsDataURL(file)}$('#customSoundFileName').textContent=file.name;$('#soundCurrentTitle').textContent=file.name;$('#soundCurrentFile').textContent='My custom reminder sound';$('#removeCustomSound').disabled=false;$$('#soundChoices .sound-choice').forEach(x=>x.classList.toggle('active',x.dataset.soundMode==='custom'));toast('Custom sound added');await playReminderSound(true)}catch{toast('Sound save avvaledu. Vere audio file try cheyyandi.')}});
@@ -819,7 +894,7 @@ $('#soundVolume').addEventListener('input',e=>{$('#soundVolumeText').textContent
 $('#saveSoundSettings').addEventListener('click',async()=>{soundSettings.volume=Number($('#soundVolume').value)||0;soundSettings.vibrate=$('#soundVibrate').checked;if(soundSettings.mode==='custom'){const rec=await getCustomSoundRecord();if(!rec){toast('Custom sound select chesaru. Mundu audio file upload cheyyandi.');return}}saveSound('sound_changed');nativeApplySoundSettings();renderSettings();closeSoundSettings();toast('Reminder sound saved')});
 $('#rateApp').addEventListener('click',()=>toast('Rate App option final published version lo active avutundi.'));
 $('#shareApp').addEventListener('click',async()=>{if(navigator.share){try{await navigator.share({title:'Think Smaart Reminder',text:'Business + Water Reminder App'})}catch{}}else toast('Share option device/browser support avasaram.')});
-$('#privacyPolicy').addEventListener('click',()=>toast('Your data is saved on this device and, when connected, synced to your configured Google Sheet. Passwords are never sent to the Sheet.'));
+$('#privacyPolicy').addEventListener('click',()=>toast('Passwords are never stored as readable text. Google Sheets stores only protected password verification data; Forgot Password uses an email reset code.'));
 $('#logoutBtn').addEventListener('click',()=>logoutUser());
 $('#menuBtn').addEventListener('click',()=>showScreen('settings'));
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e});

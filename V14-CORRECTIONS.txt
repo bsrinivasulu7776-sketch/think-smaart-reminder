@@ -1,0 +1,33 @@
+THINK SMAART REMINDER V14 - CORRECTIONS
+
+1. Automatic UI corrections
+   App checks the GitHub main branch for the latest index.html when it opens.
+   Most UI, forms, buttons, login and JS logic corrections can update without a new APK.
+   Native Android code changes still need a new APK.
+
+2. Login / Signup
+   Login and Sign Up actions rewired.
+   Cloud-backed signup added.
+   User registration details are saved into the Users Google Sheet.
+
+3. Password security
+   Plain passwords are NOT stored in Google Sheets.
+   Google Sheets stores a protected password hash + salt.
+   Forgot Password sends a 6-digit code to the registered email.
+   User can set a new password after code verification.
+
+4. Cloud restore
+   After cloud login, existing reminders, water data and health schedule can be restored from Google Sheets.
+
+5. Permissions
+   On first app open V14 automatically starts Android reminder permissions:
+   Notification permission -> Exact alarms -> Full-screen alarm permission (where Android supports it).
+   Android itself does not allow these to be forced from the APK installer screen.
+
+6. Hidden sync key
+   SYNC_KEY is no longer stored in the web index.html source.
+   GitHub Actions injects it into MainActivity.java during the build.
+
+ONE-TIME V14 BACKEND STEP:
+Replace Apps Script Code.gs with google-sheets/Code.gs and deploy a New version.
+Keep existing SYNC_KEY unchanged.

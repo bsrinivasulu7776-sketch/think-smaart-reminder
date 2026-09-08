@@ -1,31 +1,47 @@
-# Think Smaart Reminder -> Your Google Sheet
+# Google Sheets / Apps Script setup - V14
 
-Target Sheet is already fixed in `Code.gs`:
-`1GJ9ezyQcY4GdmxOhw7VVUiN8uf3IfuhpwQhCB4PJQQg`
+Target Sheet: Think Smaart Reminder
 
-## One-time setup
-1. Open your **Think Smaart Reminder** Google Sheet.
-2. Go to **Extensions -> Apps Script**.
-3. Delete the default sample code.
-4. Paste the full `Code.gs` from this folder and Save.
-5. In **Project Settings -> Script Properties**, add:
-   - Property: `SYNC_KEY`
-   - Value: a private key you choose (example: `TSR-2026-MyPrivateKey`)
-6. Go to **Deploy -> New deployment -> Web app**.
-   - Execute as: **Me**
-   - Who has access: **Anyone**
-7. Authorize Google Drive/Sheets access when Google asks.
-8. Copy the Web App URL ending in `/exec`.
-9. In the Android app open **Settings -> Google Sheets Sync**.
-10. Paste the Web App URL and the same Sync Key, then tap **Save & Sync Now**.
+## Required
 
-## What syncs
-- Users master list
-- Profile photo saved to a Drive folder and its Drive URL written to `Users`
-- Work, Payments, Delivery, Follow-up, Vendors
-- Water tracking
-- Health Schedule: Breakfast, Lunch, Lunch Break, Back To Work, Dinner
-- Generic sync/event history in `User Data`
-- A separate tab for each signed-in app user
+In Apps Script -> Project Settings -> Script Properties:
 
-Passwords are NEVER synced.
+- `SYNC_KEY` = same secret already configured in GitHub repository Actions secrets.
+
+Optional:
+
+- `AUTH_PEPPER` = a different long random secret for password-verifier protection. If not configured, the script safely falls back to `SYNC_KEY`.
+
+## Deploy
+
+After replacing `Code.gs`:
+
+1. Save the script.
+2. Deploy -> Manage deployments.
+3. Edit the existing Web app deployment.
+4. Select **New version**.
+5. Execute as: **Me**.
+6. Who has access: **Anyone**.
+7. Deploy and authorize the requested scopes.
+
+Forgot Password uses `MailApp` to email a 6-digit code. The code expires after 10 minutes.
+
+## Users sheet
+
+V14 automatically expands the `Users` sheet with protected account fields:
+
+- User ID
+- Name
+- Email
+- Mobile
+- Profile Photo URL
+- Signup Date
+- Last Sync
+- Status
+- Password Hash
+- Password Salt
+- Password Updated At
+- Role
+- Password Recovery
+
+The actual password is never written to Google Sheets.
