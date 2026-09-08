@@ -439,7 +439,8 @@ const DEFAULT_SOUND={mode:'bell',customName:'',volume:85,vibrate:true};
 const DEFAULT_HEALTH={enabled:true,breakfast:'08:00',lunch:'13:00',dinner:'20:00',breakMinutes:90};
 let profile={name:'Srinivasulu',email:'thinksmaart.tpt@gmail.com',userId:'owner',role:'Owner',photo:''};
 let tasks=[],water={...DEFAULT_WATER},soundSettings={...DEFAULT_SOUND},healthSchedule={...DEFAULT_HEALTH};
-let syncSettings=store.get('ts_sync_settings',{url:'',key:'',enabled:true,lastAt:0,lastOk:false,lastMessage:'Not connected'});
+let syncSettings=store.get('ts_sync_settings',{url:'https://script.google.com/macros/s/AKfycbwSKFmz2JlmxOrW3hpW-rlf2MvQdIJa6ZnmutHgCEg66aPi5NtdlibcFPdnOoPNY5aL/exec',key:'',enabled:true,lastAt:0,lastOk:false,lastMessage:'Web App connected'});
+if(!syncSettings.url){syncSettings.url='https://script.google.com/macros/s/AKfycbwSKFmz2JlmxOrW3hpW-rlf2MvQdIJa6ZnmutHgCEg66aPi5NtdlibcFPdnOoPNY5aL/exec';syncSettings.enabled=true;syncSettings.lastMessage='Web App connected';store.set('ts_sync_settings',syncSettings);}
 let syncTimer=null;
 function scopedKey(base,uid=(profile.userId||'owner')){return `${base}_${uid}`}
 function scopedGet(base,fallback){return store.get(scopedKey(base),fallback)}
@@ -504,7 +505,7 @@ function nativeSyncAll(){
 function publicProfile(){return {userId:profile.userId||'owner',name:profile.name||'',email:profile.email||'',phone:profile.phone||'',role:profile.role||'User',photoSet:!!profile.photo,photoData:profile.photo||''}}
 function buildSyncPayload(reason='auto'){
   return {
-    app:'Think Smaart Reminder',appVersion:'1.4.0',reason,sentAt:new Date().toISOString(),
+    app:'Think Smaart Reminder',appVersion:'1.4.1',reason,sentAt:new Date().toISOString(),
     deviceId:store.get('ts_device_id','')||(()=>{const id='dev_'+Date.now()+'_'+Math.random().toString(36).slice(2,9);store.set('ts_device_id',id);return id})(),
     syncKey:syncSettings.key||'',
     user:publicProfile(),

@@ -10,3 +10,10 @@
 - Snooze changes only alarm time, not due date.
 - Google Sheets sync includes Due Date, Due Time, Reminder Date and Reminder Time.
 - Google Apps Script mapping fixed to use app `details` fields.
+
+
+## V12.1 Web App connection
+Google Apps Script Web App URL is preconfigured in the app:
+https://script.google.com/macros/s/AKfycbwSKFmz2JlmxOrW3hpW-rlf2MvQdIJa6ZnmutHgCEg66aPi5NtdlibcFPdnOoPNY5aL/exec
+
+The user only needs to enter the same private SYNC_KEY that was set in Apps Script Project Settings -> Script Properties, then tap Save & Sync Now. Do not share the key.
