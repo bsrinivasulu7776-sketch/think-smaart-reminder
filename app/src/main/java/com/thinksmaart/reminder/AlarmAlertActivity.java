@@ -72,6 +72,7 @@ public class AlarmAlertActivity extends Activity {
         root.addView(snooze, blp);
         snooze.setOnClickListener(v -> {
             if (id == -42L) AlarmScheduler.snoozeWater(this, 10);
+            else if (AlarmScheduler.isHealthId(id)) AlarmScheduler.snoozeHealth(this, id, 10);
             else AlarmScheduler.snoozeReminder(this, id, 10);
             NotificationHelper.cancel(this, id);
             finish();

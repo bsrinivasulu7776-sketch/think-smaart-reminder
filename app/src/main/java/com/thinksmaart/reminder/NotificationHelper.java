@@ -43,7 +43,7 @@ public final class NotificationHelper {
         String id = "think_smaart_" + suffix;
         if (nm.getNotificationChannel(id) != null) return;
         NotificationChannel ch = new NotificationChannel(id, name, NotificationManager.IMPORTANCE_HIGH);
-        ch.setDescription("Think Smaart business and water reminders");
+        ch.setDescription("Think Smaart business, water and health reminders");
         ch.enableLights(true);
         ch.enableVibration(vibrate);
         if (vibrate) ch.setVibrationPattern(new long[]{0, 300, 120, 300});

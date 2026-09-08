@@ -83,7 +83,7 @@ body{display:flex;justify-content:center;align-items:flex-start;background:radia
 .intake-list{margin-top:12px;text-align:left}.intake-item{display:grid;grid-template-columns:30px 1fr auto;align-items:center;border-bottom:1px solid #edf2f7;padding:11px 2px;font-size:12px}.intake-item:last-child{border-bottom:0}.intake-item .time{color:#6c84a4}
 .report-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:13px 0}.report-stats .stat{height:73px}.report-stats .stat strong{font-size:23px}.report-stats .stat span{font-size:9px}.date-select{display:flex;align-items:center;gap:8px;background:#fff;border-radius:12px;padding:9px 12px;border:1px solid #d9e5f1;margin-top:12px}.date-select input{border:0;outline:0;background:transparent;width:100%;color:#315a8a}
 .category-report{background:#fff;border-radius:16px;box-shadow:var(--shadow);overflow:hidden}.category-report .rowr{display:grid;grid-template-columns:36px 1fr auto;align-items:center;padding:11px 12px;border-bottom:1px solid #edf2f7;font-size:13px;font-weight:750}.category-report .rowr:last-child{border-bottom:0}.rowr .r-ico{width:30px;height:30px;border-radius:8px;color:#fff;display:grid;place-items:center}
-.settings-card{background:#fff;border-radius:16px;box-shadow:var(--shadow);overflow:hidden}.profile{display:grid;grid-template-columns:54px 1fr auto;gap:10px;align-items:center;padding:15px 13px;border-bottom:1px solid #edf2f7}.avatar{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#078fe0,#0741a4);font-size:25px}.profile b{display:block;font-size:14px}.profile span{font-size:10px;color:var(--muted)}.setting-row{width:100%;border:0;background:#fff;display:grid;grid-template-columns:28px 1fr auto;align-items:center;text-align:left;padding:14px 13px;border-bottom:1px solid #edf2f7;color:var(--ink);font-size:13px}.setting-row:last-child{border-bottom:0}.setting-row .arrow{color:#9bb0ca;font-size:18px}.setting-row .subtext{font-size:10px;color:var(--muted);margin-top:2px}.logout{width:100%;border:0;border-radius:10px;background:#ff4a45;color:#fff;font-weight:850;padding:12px;margin-top:16px}
+.settings-card{background:#fff;border-radius:16px;box-shadow:var(--shadow);overflow:hidden}.profile{display:grid;grid-template-columns:54px 1fr auto;gap:10px;align-items:center;padding:15px 13px;border-bottom:1px solid #edf2f7}.avatar{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#078fe0,#0741a4);font-size:25px;overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover;display:block}.profile b{display:block;font-size:14px}.profile span{font-size:10px;color:var(--muted)}.setting-row{width:100%;border:0;background:#fff;display:grid;grid-template-columns:28px 1fr auto;align-items:center;text-align:left;padding:14px 13px;border-bottom:1px solid #edf2f7;color:var(--ink);font-size:13px}.setting-row:last-child{border-bottom:0}.setting-row .arrow{color:#9bb0ca;font-size:18px}.setting-row .subtext{font-size:10px;color:var(--muted);margin-top:2px}.logout{width:100%;border:0;border-radius:10px;background:#ff4a45;color:#fff;font-weight:850;padding:12px;margin-top:16px}
 
 
 /* category-specific reminder forms */
@@ -128,6 +128,12 @@ body{display:flex;justify-content:center;align-items:flex-start;background:radia
 .sound-range-row{display:grid;grid-template-columns:30px 1fr 44px;align-items:center;gap:8px;background:#f8fbff;border:1px solid #d9e6f2;border-radius:13px;padding:10px 12px}.sound-range-row input{width:100%;accent-color:#0879e8}.sound-range-row strong{text-align:right;font-size:12px;color:#41658e}
 .switch-row{display:flex;align-items:center;justify-content:space-between;padding:12px 2px 3px}.switch-row b{font-size:13px}.switch-row span{font-size:10px;color:var(--muted);display:block;margin-top:2px}.toggle{position:relative;width:48px;height:28px;display:inline-block}.toggle input{display:none}.toggle-slider{position:absolute;inset:0;border-radius:20px;background:#cbd9e8;transition:.2s}.toggle-slider:before{content:'';position:absolute;width:22px;height:22px;left:3px;top:3px;border-radius:50%;background:#fff;box-shadow:0 2px 7px rgba(0,0,0,.15);transition:.2s}.toggle input:checked+.toggle-slider{background:#0b7ce9}.toggle input:checked+.toggle-slider:before{transform:translateX(20px)}
 .sound-note{font-size:10px;line-height:1.45;color:#7189a8;margin:12px 2px 0;padding:10px 11px;background:#f4f8fc;border-radius:10px}
+
+.copyright-footer{margin:20px 4px 0;padding:14px 8px 2px;text-align:center;color:#6d84a4;font-size:9.5px;line-height:1.5;border-top:1px solid #e3edf7}
+.profile-photo-box{display:flex;align-items:center;gap:13px;padding:10px 0 2px}.profile-photo-preview{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#0aa6ed,#0755c7);display:grid;place-items:center;color:#fff;font-size:31px;font-weight:900;overflow:hidden;box-shadow:0 8px 20px rgba(5,91,180,.18)}.profile-photo-preview img{width:100%;height:100%;object-fit:cover}.photo-actions{display:flex;flex:1;flex-direction:column;gap:7px}.photo-upload{display:block;border:1px solid #cfddeb;background:#f7fbff;border-radius:11px;padding:10px 11px;text-align:center;font-size:11px;font-weight:850;color:#086dcc;cursor:pointer}.photo-upload input{display:none}.photo-remove{border:0;background:#fff0f1;color:#d83a43;border-radius:10px;padding:9px 10px;font-size:10.5px;font-weight:850}
+.sync-status{display:flex;gap:8px;align-items:flex-start;padding:10px 11px;background:#f4f9ff;border:1px solid #dbe9f7;border-radius:12px;margin:9px 0 12px}.sync-dot{width:9px;height:9px;border-radius:50%;background:#9bb0c9;margin-top:4px;flex:0 0 9px}.sync-dot.ok{background:#10b96f}.sync-dot.err{background:#ff4545}.sync-status b{display:block;font-size:12px}.sync-status span{display:block;font-size:10px;color:var(--muted);margin-top:2px;line-height:1.35}.sync-help{font-size:10px;line-height:1.5;color:#6e86a5;background:#f6f9fd;border-radius:11px;padding:10px 11px;margin:10px 0 0}.sync-help strong{color:#0a6fd4}
+.health-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.health-time-card{background:#f7fbff;border:1px solid #d7e6f5;border-radius:13px;padding:10px}.health-time-card label{display:block;font-size:11px;font-weight:850;margin-bottom:6px}.health-time-card input{width:100%;height:42px;border:1px solid #cbd9e9;border-radius:10px;background:#fff;padding:0 9px;color:var(--ink);font-weight:750}.health-note{font-size:10px;line-height:1.45;color:#6d84a4;background:#f4f9ff;border-radius:11px;padding:10px 11px;margin:10px 0}.health-preview{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;background:linear-gradient(105deg,#eaf7ff,#f4f1ff);border:1px solid #d7e6f5;border-radius:12px;padding:11px;margin:10px 0 13px}.health-preview b{font-size:12px}.health-preview span{font-size:11px;color:#0876db;font-weight:900}.health-switch{display:flex;align-items:center;justify-content:space-between;padding:10px 0 4px}.health-switch b{font-size:13px}.health-switch small{display:block;color:var(--muted);font-size:10px;margin-top:2px}
+
 
 @media (min-width:431px){.app-shell{margin:14px 0;border-radius:28px;min-height:calc(100vh - 28px);max-height:calc(100vh - 28px);overflow-y:auto}.bottom-nav{bottom:14px;border-radius:0 0 28px 28px}.screen{min-height:calc(100vh - 28px)}.fab{right:calc((100vw - 430px)/2 + 18px);bottom:98px}}
 </style>
@@ -198,6 +204,7 @@ body{display:flex;justify-content:center;align-items:flex-start;background:radia
       <div class="category-grid" id="homeCategories"></div>
       <div class="section-head"><h2>Today’s Reminders</h2><button class="viewall" data-nav="reminders">View All</button></div>
       <div class="reminder-list" id="todayList"></div>
+      <div class="copyright-footer">All copyrights reserved © 2023 - thinksmaart.in - B Srinivasulu. +91 831 761 7776</div>
     </main>
   </section>
 
@@ -210,6 +217,7 @@ body{display:flex;justify-content:center;align-items:flex-start;background:radia
       <div class="types-strip" id="typeStrip"></div>
       <div id="categoryForm"></div>
       <div class="field"><label id="dateTimeLabel">Due Date &amp; Time</label><div class="two-col"><input class="control" type="date" id="fDate"><input class="control" type="time" id="fTime"></div></div>
+      <div class="field"><label>🔔 Reminder / Alarm Date &amp; Time</label><div class="two-col"><input class="control" type="date" id="fReminderDate"><input class="control" type="time" id="fReminderTime"></div><div class="field-hint">Popup + alarm ee date &amp; time ki vastundi. Existing due date/time separate ga alane untundi.</div></div>
       <div class="field"><label>Priority</label><div class="priority-grid"><button class="priority-btn high active" data-priority="High">✓ High</button><button class="priority-btn medium" data-priority="Medium">● Medium</button><button class="priority-btn low" data-priority="Low">↓ Low</button></div></div>
       <div class="field"><label id="notesLabel">Notes</label><textarea class="control" id="fNotes" placeholder="Add reminder details..."></textarea></div>
       <div class="inline-card"><div class="left-ico">⟳</div><strong>Repeat Reminder</strong><select id="fRepeat"><option>Until Completed</option><option>Every 30 Minutes</option><option>Every 1 Hour</option><option>Every 3 Hours</option><option>Daily</option><option>Once</option></select></div>
@@ -272,18 +280,20 @@ body{display:flex;justify-content:center;align-items:flex-start;background:radia
     </div>
     <div class="page-body">
       <div class="settings-card">
-        <div class="profile"><div class="avatar">♙</div><div><b id="settingsName">Srinivasulu</b><span id="settingsEmail">thinksmaart.tpt@gmail.com</span></div><span class="arrow">›</span></div>
+        <div class="profile"><div class="avatar" id="settingsAvatar">♙</div><div><b id="settingsName">Srinivasulu</b><span id="settingsEmail">thinksmaart.tpt@gmail.com</span></div><span class="arrow">›</span></div>
         <button class="setting-row" id="editProfile"><span>♙</span><span>Edit Profile</span><span class="arrow">›</span></button>
         <button class="setting-row" id="settingsNotifications"><span>♧</span><span>Notifications</span><span class="arrow">›</span></button>
         <button class="setting-row" id="soundSetting"><span>🔊</span><span><b>Reminder Sound</b><div class="subtext" id="soundSummary">Think Smaart Bell</div></span><span class="arrow">›</span></button>
+        <button class="setting-row" id="healthScheduleSetting"><span>🍽️</span><span><b>Meals &amp; Lunch Break</b><div class="subtext" id="healthScheduleSummary">Breakfast 8:00 • Lunch 1:00 • Dinner 8:00</div></span><span class="arrow">›</span></button>
         <button class="setting-row" id="themeSetting"><span>◉</span><span>Theme &amp; Appearance</span><span class="arrow">›</span></button>
-        <button class="setting-row" id="backupSetting"><span>☁</span><span>Backup &amp; Sync</span><span class="arrow">›</span></button>
+        <button class="setting-row" id="backupSetting"><span>☁</span><span><b>Google Sheets Sync</b><div class="subtext" id="syncSummary">Not connected</div></span><span class="arrow">›</span></button>
         <button class="setting-row" id="rateApp"><span>☆</span><span>Rate App</span><span class="arrow">›</span></button>
         <button class="setting-row" id="shareApp"><span>⌯</span><span>Share App</span><span class="arrow">›</span></button>
         <button class="setting-row" id="privacyPolicy"><span>▣</span><span>Privacy Policy</span><span class="arrow">›</span></button>
         <button class="setting-row" id="aboutApp"><span>ⓘ</span><span>About App</span><span class="arrow">›</span></button>
       </div>
       <button class="logout" id="logoutBtn">Logout</button>
+      <div class="copyright-footer">All copyrights reserved © 2023 - thinksmaart.in - B Srinivasulu. +91 831 761 7776</div>
     </div>
   </section>
 
@@ -296,7 +306,31 @@ body{display:flex;justify-content:center;align-items:flex-start;background:radia
   </nav>
 </div>
 <div class="modal-backdrop" id="actionModal"><div class="sheet"><div class="sheet-handle"></div><h3 id="sheetTitle">Reminder</h3><div class="sheet-actions"><button id="sheetComplete">✓ Mark Complete</button><button id="sheetEdit">✎ Edit Reminder</button><button id="sheetSnooze">⏱ Snooze 30 Minutes</button><button class="danger" id="sheetDelete">🗑 Delete Reminder</button><button id="sheetCancel">Cancel</button></div></div></div>
-<div class="modal-backdrop" id="profileModal"><div class="sheet"><div class="sheet-handle"></div><h3>Edit Profile</h3><div class="field"><label>Name</label><input class="control" id="profileName" value="Srinivasulu"></div><div class="field"><label>Email</label><input class="control" id="profileEmail" value="thinksmaart.tpt@gmail.com" disabled></div><button class="primary" id="profileSave">Save Profile</button></div></div>
+<div class="modal-backdrop" id="profileModal"><div class="sheet"><div class="sheet-handle"></div><h3>Edit Profile</h3>
+  <div class="profile-photo-box"><div class="profile-photo-preview" id="profilePhotoPreview">S</div><div class="photo-actions"><label class="photo-upload" for="profilePhotoFile">📷 Upload Profile Photo<input id="profilePhotoFile" type="file" accept="image/*"></label><button class="photo-remove" id="removeProfilePhoto" type="button">Remove Photo</button></div></div>
+  <div class="field"><label>Name</label><input class="control" id="profileName" value="Srinivasulu"></div>
+  <div class="field"><label>Email</label><input class="control" id="profileEmail" value="thinksmaart.tpt@gmail.com" disabled></div>
+  <button class="primary" id="profileSave">Save Profile</button>
+</div></div>
+<div class="modal-backdrop" id="syncModal"><div class="sheet"><div class="sheet-handle"></div><h3>Google Sheets Sync</h3>
+  <div class="sync-status"><div class="sync-dot" id="syncDot"></div><div><b id="syncStatusTitle">Not connected</b><span id="syncStatusText">Connect your Think Smaart Google Sheet Web App URL.</span></div></div>
+  <div class="field"><label>Google Apps Script Web App URL</label><input class="control" id="syncUrl" type="url" placeholder="https://script.google.com/macros/s/.../exec"></div>
+  <div class="field"><label>Sync Key</label><input class="control" id="syncKey" type="password" placeholder="Same secret key used in Code.gs"></div>
+  <div class="sync-help"><strong>Connected Sheet:</strong> Think Smaart Reminder (your Google Drive).<br><strong>Automatic sync:</strong> profile photo, signup user, Work, Payment, Delivery, Follow-up, Vendor, Water and Health Schedule data are sent to your Drive Sheet. Each user also gets a separate sheet tab.</div>
+  <button class="primary" id="saveSyncSettings">Save &amp; Sync Now</button>
+</div></div>
+<div class="modal-backdrop" id="healthScheduleModal"><div class="sheet"><div class="sheet-handle"></div><h3>Meals &amp; Lunch Break</h3>
+  <div class="health-switch"><div><b>Daily Health Alarms</b><small>Breakfast, lunch, back-to-work and dinner popup alarms</small></div><label class="toggle"><input type="checkbox" id="healthEnabled" checked><span class="toggle-slider"></span></label></div>
+  <div class="health-grid">
+    <div class="health-time-card"><label>🍳 Breakfast</label><input type="time" id="breakfastTime" value="08:00"></div>
+    <div class="health-time-card"><label>🍱 Lunch</label><input type="time" id="lunchTime" value="13:00"></div>
+    <div class="health-time-card"><label>🍽️ Dinner</label><input type="time" id="dinnerTime" value="20:00"></div>
+    <div class="health-time-card"><label>💼 Lunch Break (minutes)</label><input type="number" id="lunchBreakMinutes" min="15" max="240" step="15" value="90"></div>
+  </div>
+  <div class="health-preview"><b>Back to Work Alarm</b><span id="backToWorkPreview">2:30 PM</span></div>
+  <div class="health-note">Default routine: breakfast 8:00 AM, lunch 1:00 PM, dinner 8:00 PM. These are general routine defaults; you can change them to match your work and sleep schedule. Lunch break is 90 minutes by default.</div>
+  <button class="primary" id="saveHealthSchedule">Save Health Alarms</button>
+</div></div>
 <div class="modal-backdrop" id="soundModal"><div class="sheet sound-sheet"><div class="sheet-handle"></div><h3>Reminder Sound</h3>
   <div class="sound-current"><div class="sound-big-icon">🔊</div><div><b id="soundCurrentTitle">Think Smaart Bell</b><span id="soundCurrentFile">Built-in reminder sound</span></div></div>
   <div class="form-section-title">Choose Sound</div>
@@ -400,10 +434,36 @@ const store={
   get(k,f){try{const raw=localStorage.getItem(k);if(raw!==null)return JSON.parse(raw)}catch{} return memoryStore[k]??f},
   set(k,v){memoryStore[k]=v;try{localStorage.setItem(k,JSON.stringify(v))}catch{}}
 };
-let tasks=store.get('ts_tasks',[]);
-let profile=store.get('ts_profile',{name:'Srinivasulu',email:'thinksmaart.tpt@gmail.com'});
-let water=store.get('ts_water',{date:'',ml:0,target:3000,interval:60,entries:[],lastReminder:0});
-let soundSettings=store.get('ts_sound_settings',{mode:'bell',customName:'',volume:85,vibrate:true});
+const DEFAULT_WATER={date:'',ml:0,target:3000,interval:60,entries:[],lastReminder:0};
+const DEFAULT_SOUND={mode:'bell',customName:'',volume:85,vibrate:true};
+const DEFAULT_HEALTH={enabled:true,breakfast:'08:00',lunch:'13:00',dinner:'20:00',breakMinutes:90};
+let profile={name:'Srinivasulu',email:'thinksmaart.tpt@gmail.com',userId:'owner',role:'Owner',photo:''};
+let tasks=[],water={...DEFAULT_WATER},soundSettings={...DEFAULT_SOUND},healthSchedule={...DEFAULT_HEALTH};
+let syncSettings=store.get('ts_sync_settings',{url:'',key:'',enabled:true,lastAt:0,lastOk:false,lastMessage:'Not connected'});
+let syncTimer=null;
+function scopedKey(base,uid=(profile.userId||'owner')){return `${base}_${uid}`}
+function scopedGet(base,fallback){return store.get(scopedKey(base),fallback)}
+function scopedSet(base,value){store.set(scopedKey(base),value)}
+function loadUserData(user){
+  const uid=user?.id||'owner';
+  const legacyProfile=uid==='owner'?store.get('ts_profile',{}):{};
+  profile=store.get(`ts_profile_${uid}`,{...legacyProfile,name:user?.name||legacyProfile.name||'User',email:user?.email||legacyProfile.email||'',phone:user?.phone||legacyProfile.phone||'',userId:uid,role:user?.role||legacyProfile.role||'User',photo:legacyProfile.photo||''});
+  profile={...profile,name:user?.name||profile.name,email:user?.email||profile.email,phone:user?.phone||profile.phone||'',userId:uid,role:user?.role||profile.role||'User'};
+  const legacyTasks=uid==='owner'?store.get('ts_tasks',[]):[];
+  const legacyWater=uid==='owner'?store.get('ts_water',DEFAULT_WATER):DEFAULT_WATER;
+  const legacySound=uid==='owner'?store.get('ts_sound_settings',DEFAULT_SOUND):DEFAULT_SOUND;
+  const legacyHealth=uid==='owner'?store.get('ts_health_schedule',DEFAULT_HEALTH):DEFAULT_HEALTH;
+  tasks=store.get(`ts_tasks_${uid}`,legacyTasks||[]).map(t=>({...t,reminderDate:t.reminderDate||t.date,reminderTime:t.reminderTime||t.time}));
+  water=store.get(`ts_water_${uid}`,{...DEFAULT_WATER,...(legacyWater||{})});
+  soundSettings=store.get(`ts_sound_settings_${uid}`,{...DEFAULT_SOUND,...(legacySound||{})});
+  healthSchedule=store.get(`ts_health_schedule_${uid}`,{...DEFAULT_HEALTH,...(legacyHealth||{})});
+  store.set(`ts_profile_${uid}`,profile);
+}
+function saveProfile(){scopedSet('ts_profile',profile)}
+function saveTasks(reason='tasks'){scopedSet('ts_tasks',tasks);queueCloudSync(reason)}
+function saveWater(reason='water'){scopedSet('ts_water',water);queueCloudSync(reason)}
+function saveSound(reason='sound'){scopedSet('ts_sound_settings',soundSettings);queueCloudSync(reason)}
+function saveHealth(reason='health_schedule'){scopedSet('ts_health_schedule',healthSchedule);queueCloudSync(reason)}
 let audioCtx=null,customAudioBuffer=null,audioUnlocked=false;
 let selectedType='Work', selectedPriority='High', filter='All', activeTaskId=null, editTaskId=null, quickMl=250, deferredPrompt=null;
 
@@ -418,7 +478,7 @@ function nativeScheduleTask(t){
       id:Number(t.id),
       title:t.title||'Reminder',
       category:t.type||'Work',
-      triggerAt:dueDate(t).getTime(),
+      triggerAt:alarmDate(t).getTime(),
       repeatUntilCompleted:String(t.repeat||'').toLowerCase().includes('until completed'),
       notes:t.notes||'',
       priority:t.priority||'High'
@@ -429,19 +489,67 @@ function nativeScheduleTask(t){
 function nativeCancelTask(id){try{if(nativeAndroid())window.NativeApp.cancelReminder(String(id))}catch{}}
 function nativeScheduleWater(){try{if(nativeAndroid())window.NativeApp.scheduleWater(Math.max(30,Number(water.interval)||60))}catch{}}
 function nativeApplySoundSettings(){try{if(nativeAndroid())window.NativeApp.setSoundMode(soundSettings.mode||'bell',soundSettings.vibrate!==false)}catch{}}
+function nativeScheduleHealth(){try{if(nativeAndroid()&&typeof window.NativeApp.scheduleHealthSchedule==='function')window.NativeApp.scheduleHealthSchedule(JSON.stringify({...healthSchedule,userId:profile.userId||'owner'}))}catch{}}
 function nativeSyncAll(){
   if(!nativeAndroid())return;
   try{
     tasks.forEach(t=>t.done?nativeCancelTask(t.id):nativeScheduleTask(t));
     nativeScheduleWater();
     nativeApplySoundSettings();
+    nativeScheduleHealth();
+    if(syncSettings.url)window.NativeApp.setGoogleSheetsConfig(syncSettings.url||'',syncSettings.key||'');
   }catch(e){}
+}
+
+function publicProfile(){return {userId:profile.userId||'owner',name:profile.name||'',email:profile.email||'',phone:profile.phone||'',role:profile.role||'User',photoSet:!!profile.photo,photoData:profile.photo||''}}
+function buildSyncPayload(reason='auto'){
+  return {
+    app:'Think Smaart Reminder',appVersion:'1.4.0',reason,sentAt:new Date().toISOString(),
+    deviceId:store.get('ts_device_id','')||(()=>{const id='dev_'+Date.now()+'_'+Math.random().toString(36).slice(2,9);store.set('ts_device_id',id);return id})(),
+    syncKey:syncSettings.key||'',
+    user:publicProfile(),
+    tasks:tasks.map(t=>({...t})),
+    water:{...water,entries:Array.isArray(water.entries)?water.entries:[]},
+    healthSchedule:{...healthSchedule},
+    settings:{soundMode:soundSettings.mode||'bell',vibrate:soundSettings.vibrate!==false,volume:Number(soundSettings.volume)||0}
+  };
+}
+function queueCloudSync(reason='auto'){
+  if(!syncSettings.enabled||!syncSettings.url||!profile.userId)return;
+  clearTimeout(syncTimer);syncTimer=setTimeout(()=>cloudSync(reason,false),650);
+}
+function cloudSync(reason='manual',manual=true){
+  if(!syncSettings.url){if(manual)toast('Google Sheets Web App URL first connect cheyyandi.');return}
+  if(nativeAndroid()&&typeof window.NativeApp.syncToGoogleSheets==='function'){
+    try{
+      window.NativeApp.setGoogleSheetsConfig(syncSettings.url||'',syncSettings.key||'');
+      window.NativeApp.syncToGoogleSheets(JSON.stringify(buildSyncPayload(reason)));
+      syncSettings.lastMessage='Syncing...';store.set('ts_sync_settings',syncSettings);renderSettings();if(manual)toast('Google Sheets sync started');
+    }catch(e){if(manual)toast('Sync start avvaledu')}
+    return;
+  }
+  fetch(syncSettings.url,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(buildSyncPayload(reason))})
+    .then(r=>r.text()).then(()=>onNativeSyncResult(true,'Synced')).catch(()=>onNativeSyncResult(false,'Sync failed'));
+}
+window.onNativeSyncResult=function(ok,message){
+  syncSettings.lastOk=!!ok;syncSettings.lastAt=Date.now();syncSettings.lastMessage=message||(ok?'Synced':'Sync failed');store.set('ts_sync_settings',syncSettings);renderSettings();
+  const modal=$('#syncModal');if(modal?.classList.contains('show'))renderSyncModal();
+  if(!ok)toast('Google Sheets sync failed');
+}
+function formatSyncTime(ts){if(!ts)return '';try{return new Date(ts).toLocaleString([], {day:'2-digit',month:'short',hour:'numeric',minute:'2-digit'})}catch{return ''}}
+function renderSyncModal(){
+  $('#syncUrl').value=syncSettings.url||'';$('#syncKey').value=syncSettings.key||'';
+  const connected=!!syncSettings.url,ok=connected&&syncSettings.lastOk;
+  $('#syncDot').className='sync-dot '+(ok?'ok':(connected&&syncSettings.lastAt?'err':''));
+  $('#syncStatusTitle').textContent=!connected?'Not connected':ok?'Connected & Synced':'Connected';
+  $('#syncStatusText').textContent=!connected?'Paste the Apps Script Web App URL below.':(syncSettings.lastAt?`${syncSettings.lastMessage} • ${formatSyncTime(syncSettings.lastAt)}`:'Ready to sync');
 }
 
 function iconHtml(cat,small=false){const info=CATEGORY_INFO[cat]||CATEGORY_INFO.Work;if(info.icon==='rupee')return `<span class="${small?'tiny-icon':'cat-icon'} ${small?'':'rupee'} ${small?'':info.cls}">₹</span>`;return `<span class="${small?'tiny-icon':'cat-icon'} ${small?'':info.cls}">${ICONS[info.icon]}</span>`}
 function esc(v=''){return String(v).replace(/[&<>'"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[m]))}
 function localDateKey(d=new Date()){const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');return `${y}-${m}-${day}`}
 function dueDate(t){return new Date(`${t.date}T${t.time||'23:59'}`)}
+function alarmDate(t){const d=t.reminderDate||t.date,tm=t.reminderTime||t.time||'23:59';return new Date(`${d}T${tm}`)}
 function isOverdue(t){return !t.done&&dueDate(t)<new Date()}
 function taskStatus(t){if(t.done)return ['Completed','completed-text'];if(isOverdue(t))return ['Overdue','overdue-text'];return ['Pending','pending-text']}
 function toast(msg){const el=$('#toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('show'),2400)}
@@ -511,27 +619,27 @@ function taskSubline(t){
 function renderHome(){
   const open=tasks.filter(t=>!t.done), completed=tasks.filter(t=>t.done), overdue=open.filter(isOverdue);
   $('#statTotal').textContent=tasks.length;$('#statPending').textContent=open.length;$('#statCompleted').textContent=completed.length;$('#statOverdue').textContent=overdue.length;$('#bellBadge').textContent=open.length>9?'9+':open.length;
-  const today=localDateKey();const list=tasks.filter(t=>t.date===today).sort((a,b)=>(a.time||'').localeCompare(b.time||''));
+  const today=localDateKey();const list=tasks.filter(t=>(t.reminderDate||t.date)===today).sort((a,b)=>(a.reminderTime||a.time||'').localeCompare(b.reminderTime||b.time||''));
   $('#todayList').innerHTML=list.length?list.slice(0,5).map(reminderRow).join(''):`<div class="empty"><b>No reminders today</b><span>Tap a reminder category to add one.</span></div>`;
   $('#homeName').textContent=profile.name+' 👋';$('#settingsName').textContent=profile.name;const se=$('#settingsEmail');if(se)se.textContent=profile.email;
 }
-function reminderRow(t){const [status,cls]=taskStatus(t);const info=CATEGORY_INFO[t.type]||CATEGORY_INFO.Work;let mini=info.icon==='rupee'?`<div class="mini-icon ${info.cls}" style="font-size:23px;font-weight:900">₹</div>`:`<div class="mini-icon ${info.cls}">${ICONS[info.icon]}</div>`;return `<button class="reminder-row" data-task="${t.id}" style="border:0;width:100%;text-align:left;color:inherit">${mini}<div><div class="reminder-title">${esc(t.title)}</div><div class="reminder-sub">${esc(taskSubline(t))}</div></div><div class="reminder-time"><div>${formatTime(t.time)}</div><div class="reminder-status ${cls}">${status}</div></div></button>`}
+function reminderRow(t){const [status,cls]=taskStatus(t);const info=CATEGORY_INFO[t.type]||CATEGORY_INFO.Work;let mini=info.icon==='rupee'?`<div class="mini-icon ${info.cls}" style="font-size:23px;font-weight:900">₹</div>`:`<div class="mini-icon ${info.cls}">${ICONS[info.icon]}</div>`;const alarmTm=t.reminderTime||t.time;const dueTxt=(t.reminderDate||t.date)!==t.date||alarmTm!==t.time?`<div style="font-size:9px;color:#7890ad;margin-top:2px">Due ${esc(t.date)} ${formatTime(t.time)}</div>`:'';return `<button class="reminder-row" data-task="${t.id}" style="border:0;width:100%;text-align:left;color:inherit">${mini}<div><div class="reminder-title">${esc(t.title)}</div><div class="reminder-sub">${esc(taskSubline(t))}</div></div><div class="reminder-time"><div>${formatTime(alarmTm)}</div>${dueTxt}<div class="reminder-status ${cls}">${status}</div></div></button>`}
 function renderAll(){
-  let list=[...tasks].sort((a,b)=>dueDate(a)-dueDate(b));if(filter==='Pending')list=list.filter(t=>!t.done&&!isOverdue(t));if(filter==='Completed')list=list.filter(t=>t.done);if(filter==='Overdue')list=list.filter(isOverdue);
+  let list=[...tasks].sort((a,b)=>alarmDate(a)-alarmDate(b));if(filter==='Pending')list=list.filter(t=>!t.done&&!isOverdue(t));if(filter==='Completed')list=list.filter(t=>t.done);if(filter==='Overdue')list=list.filter(isOverdue);
   $('#allList').innerHTML=list.length?list.map(reminderRow).join(''):`<div class="empty"><b>No ${filter.toLowerCase()} reminders</b><span>Add a reminder using the + button.</span></div>`;
 }
 function formatTime(v){if(!v)return '';const [h,m]=v.split(':').map(Number),d=new Date();d.setHours(h,m);return d.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'})}
 function showScreen(name){$$('.screen').forEach(s=>s.classList.remove('active'));$('#screen-'+name).classList.add('active');$$('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.nav===name));if(name==='add')$$('.nav-btn').forEach(b=>b.classList.remove('active'));if(name==='reminders')renderAll();if(name==='water')renderWater();if(name==='reports')renderReports();if(name==='settings')renderSettings();document.querySelector('.app-shell').scrollTop=0;window.scrollTo(0,0)}
-function setDefaultDateTime(){const now=new Date(),later=new Date(now.getTime()+60*60*1000);$('#fDate').value=localDateKey(now);$('#fTime').value=`${String(later.getHours()).padStart(2,'0')}:${String(later.getMinutes()).padStart(2,'0')}`}
+function setDefaultDateTime(){const now=new Date(),later=new Date(now.getTime()+60*60*1000);const d=localDateKey(now),tm=`${String(later.getHours()).padStart(2,'0')}:${String(later.getMinutes()).padStart(2,'0')}`;$('#fDate').value=d;$('#fTime').value=tm;$('#fReminderDate').value=d;$('#fReminderTime').value=tm}
 function openAdd(cat='Work'){selectedType=cat==='Water'?'Water':cat;editTaskId=null;if(cat==='Water'){showScreen('water');return}resetForm();renderCategories();renderCategoryForm();showScreen('add')}
 function resetForm(){selectedPriority='High';setDefaultDateTime();$('#fNotes').value='';$('#fRepeat').value='Until Completed';$('#fFile').value='';$('#fileName').textContent='Choose File / Add Image';$$('.priority-btn').forEach(b=>b.classList.toggle('active',b.dataset.priority==='High'))}
 function saveTask(){
-  const date=$('#fDate').value,time=$('#fTime').value;if(!validateCategoryDetails())return;if(!date||!time){toast('Reminder date & time enter cheyyandi.');return}
+  const date=$('#fDate').value,time=$('#fTime').value,reminderDate=$('#fReminderDate').value,reminderTime=$('#fReminderTime').value;if(!validateCategoryDetails())return;if(!date||!time){toast('Due date & time enter cheyyandi.');return}if(!reminderDate||!reminderTime){toast('Reminder / alarm date & time enter cheyyandi.');return}
   const details=collectCategoryDetails(), canonical=canonicalTaskFields(details);
-  const data={...canonical,details,type:selectedType,date,time,priority:selectedPriority,notes:$('#fNotes').value.trim(),repeat:$('#fRepeat').value,fileName:$('#fFile').files[0]?.name||($('#fileName').textContent==='Choose File / Add Image'?'':$('#fileName').textContent),done:false,updatedAt:Date.now()};
+  const data={...canonical,details,type:selectedType,date,time,reminderDate,reminderTime,priority:selectedPriority,notes:$('#fNotes').value.trim(),repeat:$('#fRepeat').value,fileName:$('#fFile').files[0]?.name||($('#fileName').textContent==='Choose File / Add Image'?'':$('#fileName').textContent),done:false,updatedAt:Date.now()};
   let savedTask=null;
   if(editTaskId){const i=tasks.findIndex(t=>t.id===editTaskId);if(i>=0){tasks[i]={...tasks[i],...data,done:tasks[i].done};savedTask=tasks[i]}toast(`${selectedType} reminder updated`)}else{savedTask={id:Date.now(),createdAt:Date.now(),...data};tasks.push(savedTask);toast(`${selectedType} reminder saved`)}
-  store.set('ts_tasks',tasks);if(savedTask){savedTask.done?nativeCancelTask(savedTask.id):nativeScheduleTask(savedTask)}editTaskId=null;renderAllData();showScreen('home');
+  saveTasks(editTaskId?'reminder_updated':'reminder_created');if(savedTask){savedTask.done?nativeCancelTask(savedTask.id):nativeScheduleTask(savedTask)}editTaskId=null;renderAllData();showScreen('home');
 }
 function openTaskSheet(id){activeTaskId=Number(id);const t=tasks.find(x=>x.id===activeTaskId);if(!t)return;const info=CATEGORY_INFO[t.type]||CATEGORY_INFO.Work;$('#sheetTitle').textContent=`${info.label}: ${t.title}`;$('#sheetComplete').textContent=t.done?'↩ Mark Pending':'✓ Mark Complete';$('#actionModal').classList.add('show')}
 function closeTaskSheet(){$('#actionModal').classList.remove('show')}
@@ -544,14 +652,27 @@ function legacyDetails(t){
   if(t.type==='Vendor')return {vendorName:t.customer||'',vendorWork:t.title||'',vendorType:t.workType||'Printing Vendor'};
   return {};
 }
-function editTask(id){const t=tasks.find(x=>x.id===id);if(!t)return;editTaskId=id;selectedType=t.type==='Water'?'Work':t.type;selectedPriority=t.priority||'High';renderCategories();renderCategoryForm(legacyDetails(t));$('#fDate').value=t.date;$('#fTime').value=t.time;$('#fNotes').value=t.notes||'';$('#fRepeat').value=t.repeat||'Until Completed';$('#fileName').textContent=t.fileName||'Choose File / Add Image';$$('.priority-btn').forEach(b=>b.classList.toggle('active',b.dataset.priority===selectedPriority));closeTaskSheet();showScreen('add')}
+function editTask(id){const t=tasks.find(x=>x.id===id);if(!t)return;editTaskId=id;selectedType=t.type==='Water'?'Work':t.type;selectedPriority=t.priority||'High';renderCategories();renderCategoryForm(legacyDetails(t));$('#fDate').value=t.date;$('#fTime').value=t.time;$('#fReminderDate').value=t.reminderDate||t.date;$('#fReminderTime').value=t.reminderTime||t.time;$('#fNotes').value=t.notes||'';$('#fRepeat').value=t.repeat||'Until Completed';$('#fileName').textContent=t.fileName||'Choose File / Add Image';$$('.priority-btn').forEach(b=>b.classList.toggle('active',b.dataset.priority===selectedPriority));closeTaskSheet();showScreen('add')}
 function renderAllData(){renderHome();renderAll();renderReports();renderWater();renderSettings()}
-function resetWaterDay(){const d=localDateKey();if(water.date!==d){water.date=d;water.ml=0;water.entries=[];store.set('ts_water',water)}}
+function resetWaterDay(){const d=localDateKey();if(water.date!==d){water.date=d;water.ml=0;water.entries=[];scopedSet('ts_water',water)}}
 function renderWater(){resetWaterDay();$('#waterTarget').value=water.target;$('#waterInterval').value=water.interval;$('#waterMl').textContent=`${water.ml} ml`;$('#waterGoalText').innerHTML=`Today<br>${(water.ml/1000).toFixed(2)} / ${(water.target/1000).toFixed(1)} L`;$('#waterRing').style.setProperty('--p',`${Math.min(100,water.ml/water.target*100)}%`);$('#waterIntakeList').innerHTML=water.entries.length?water.entries.slice().reverse().map(e=>`<div class="intake-item"><span>💧</span><b>${e.ml} ml</b><span class="time">${esc(e.time)}</span></div>`).join(''):`<div class="empty" style="box-shadow:none;background:#f7fbff"><b>No water logged yet</b><span>Use Quick Add above.</span></div>`}
-function addWater(ml){resetWaterDay();water.ml=Math.max(0,water.ml+ml);if(ml>0)water.entries.push({ml,time:new Date().toLocaleTimeString([], {hour:'numeric',minute:'2-digit'})});else if(ml<0&&water.entries.length)water.entries.pop();store.set('ts_water',water);renderWater();toast(ml>0?`${ml} ml added 💧`:'Last water entry removed')}
+function addWater(ml){resetWaterDay();water.ml=Math.max(0,water.ml+ml);if(ml>0)water.entries.push({ml,time:new Date().toLocaleTimeString([], {hour:'numeric',minute:'2-digit'}),at:new Date().toISOString()});else if(ml<0&&water.entries.length)water.entries.pop();saveWater(ml>0?'water_added':'water_removed');renderWater();toast(ml>0?`${ml} ml added 💧`:'Last water entry removed')}
 function renderReports(){const total=tasks.length,pending=tasks.filter(t=>!t.done).length,completed=tasks.filter(t=>t.done).length,overdue=tasks.filter(isOverdue).length;$('#rTotal').textContent=total;$('#rPending').textContent=pending;$('#rCompleted').textContent=completed;$('#rOverdue').textContent=overdue;$('#categoryReport').innerHTML=Object.keys(CATEGORY_INFO).map(cat=>{const info=CATEGORY_INFO[cat],n=tasks.filter(t=>t.type===cat).length;const ico=info.icon==='rupee'?`<div class="r-ico ${info.cls}">₹</div>`:`<div class="r-ico ${info.cls}">${ICONS[info.icon]}</div>`;return `<div class="rowr">${ico}<span>${info.label}</span><strong>${n}</strong></div>`}).join('')}
 function soundLabel(mode=soundSettings.mode){return mode==='bell'?'Think Smaart Bell':mode==='chime'?'Soft Chime':mode==='alert'?'Strong Alert':mode==='custom'?(soundSettings.customName||'My Custom Sound'):'Silent'}
-function renderSettings(){const p=('Notification' in window)?Notification.permission:'default';$('#settingsName').textContent=profile.name;const se=$('#settingsEmail');if(se)se.textContent=profile.email;const ss=$('#soundSummary');if(ss)ss.textContent=soundLabel()}
+function renderAvatar(){
+  const initials=(profile.name||'U').trim().charAt(0).toUpperCase()||'U';
+  const html=profile.photo?`<img src="${profile.photo}" alt="Profile photo">`:esc(initials);
+  const a=$('#settingsAvatar');if(a)a.innerHTML=html;
+  const p=$('#profilePhotoPreview');if(p)p.innerHTML=html;
+}
+function formatTime12(v){try{const [h,m]=String(v||'00:00').split(':').map(Number);const d=new Date();d.setHours(h||0,m||0,0,0);return d.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'})}catch{return v||''}}
+function backToWorkTime(){try{const [h,m]=String(healthSchedule.lunch||'13:00').split(':').map(Number);const total=(h*60+m+Math.max(15,Number(healthSchedule.breakMinutes)||90))%(24*60);return `${String(Math.floor(total/60)).padStart(2,'0')}:${String(total%60).padStart(2,'0')}`}catch{return '14:30'}}
+function renderHealthModal(){
+  $('#healthEnabled').checked=healthSchedule.enabled!==false;$('#breakfastTime').value=healthSchedule.breakfast||'08:00';$('#lunchTime').value=healthSchedule.lunch||'13:00';$('#dinnerTime').value=healthSchedule.dinner||'20:00';$('#lunchBreakMinutes').value=String(Math.max(15,Number(healthSchedule.breakMinutes)||90));
+  $('#backToWorkPreview').textContent=formatTime12(backToWorkTime());
+}
+function updateHealthPreview(){const lunch=$('#lunchTime').value||'13:00',mins=Math.max(15,Number($('#lunchBreakMinutes').value)||90);const [h,m]=lunch.split(':').map(Number);const total=(h*60+m+mins)%(24*60);$('#backToWorkPreview').textContent=formatTime12(`${String(Math.floor(total/60)).padStart(2,'0')}:${String(total%60).padStart(2,'0')}`)}
+function renderSettings(){const p=('Notification' in window)?Notification.permission:'default';$('#settingsName').textContent=profile.name;const se=$('#settingsEmail');if(se)se.textContent=profile.email;const ss=$('#soundSummary');if(ss)ss.textContent=soundLabel();const hs=$('#healthScheduleSummary');if(hs)hs.textContent=healthSchedule.enabled===false?'Health alarms off':`${formatTime12(healthSchedule.breakfast)} • ${formatTime12(healthSchedule.lunch)} • ${formatTime12(healthSchedule.dinner)}`;renderAvatar();const sy=$('#syncSummary');if(sy)sy.textContent=!syncSettings.url?'Not connected':syncSettings.lastOk?`Synced ${formatSyncTime(syncSettings.lastAt)}`:'Connected • sync pending'}
 function getAudioContext(){if(!audioCtx){const AC=window.AudioContext||window.webkitAudioContext;if(AC)audioCtx=new AC()}return audioCtx}
 async function unlockAudio(){try{const c=getAudioContext();if(c&&c.state==='suspended')await c.resume();audioUnlocked=!!c}catch{} }
 function vibrateReminder(){if(soundSettings.vibrate&&navigator.vibrate)try{navigator.vibrate([240,110,240])}catch{}}
@@ -562,11 +683,11 @@ async function getCustomSoundRecord(){try{const db=await openSoundDb();const rec
 async function deleteCustomSoundBlob(){try{const db=await openSoundDb();await new Promise((resolve,reject)=>{const tx=db.transaction('sounds','readwrite');tx.objectStore('sounds').delete('custom');tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});db.close()}catch{}customAudioBuffer=null}
 async function playCustomSound(){const c=getAudioContext();if(!c)return false;try{if(c.state==='suspended')await c.resume();if(!customAudioBuffer){const rec=await getCustomSoundRecord();if(!rec?.blob)return false;const arr=await rec.blob.arrayBuffer();customAudioBuffer=await c.decodeAudioData(arr.slice(0))}const src=c.createBufferSource(),g=c.createGain();g.gain.value=Math.max(0,Math.min(1,(Number(soundSettings.volume)||0)/100));src.buffer=customAudioBuffer;src.connect(g);g.connect(c.destination);src.start();return true}catch{return false}}
 async function playReminderSound(preview=false){try{await unlockAudio();let ok=true;if(soundSettings.mode==='custom')ok=await playCustomSound();else if(soundSettings.mode==='silent')ok=true;else await playToneSequence(soundSettings.mode);if(!preview)vibrateReminder();if(soundSettings.mode==='custom'&&!ok){await playToneSequence('bell');if(preview)toast('Custom sound dorakaledhu. Bell preview play chestunna.')}}catch{if(preview)toast('Sound preview browser lo block ayyindi. Screen ni okasari tap chesi malli try cheyyandi.')}}
-async function openSoundSettings(){await unlockAudio();$('#soundModal').classList.add('show');$('#soundVolume').value=String(soundSettings.volume??85);$('#soundVolumeText').textContent=`${soundSettings.volume??85}%`;$('#soundVibrate').checked=soundSettings.vibrate!==false;$$('#soundChoices .sound-choice').forEach(b=>b.classList.toggle('active',b.dataset.soundMode===soundSettings.mode));const rec=await getCustomSoundRecord();if(rec?.name&&!soundSettings.customName){soundSettings.customName=rec.name;store.set('ts_sound_settings',soundSettings)}$('#customSoundFileName').textContent=rec?.name||soundSettings.customName||'No custom sound selected';$('#soundCurrentTitle').textContent=soundLabel();$('#soundCurrentFile').textContent=soundSettings.mode==='custom'?(rec?.name||soundSettings.customName||'Upload your sound below'):'Built-in reminder sound';$('#removeCustomSound').disabled=!rec}
+async function openSoundSettings(){await unlockAudio();$('#soundModal').classList.add('show');$('#soundVolume').value=String(soundSettings.volume??85);$('#soundVolumeText').textContent=`${soundSettings.volume??85}%`;$('#soundVibrate').checked=soundSettings.vibrate!==false;$$('#soundChoices .sound-choice').forEach(b=>b.classList.toggle('active',b.dataset.soundMode===soundSettings.mode));const rec=await getCustomSoundRecord();if(rec?.name&&!soundSettings.customName){soundSettings.customName=rec.name;saveSound('sound_changed')}$('#customSoundFileName').textContent=rec?.name||soundSettings.customName||'No custom sound selected';$('#soundCurrentTitle').textContent=soundLabel();$('#soundCurrentFile').textContent=soundSettings.mode==='custom'?(rec?.name||soundSettings.customName||'Upload your sound below'):'Built-in reminder sound';$('#removeCustomSound').disabled=!rec}
 function closeSoundSettings(){$('#soundModal').classList.remove('show')}
 async function askNotifications(){if(nativeAndroid()){nativeRequestPermissions();nativeScheduleWater();toast('Android notification & alarm permissions open chestunnayi');return}if(!('Notification'in window)){toast('Notifications are not supported in this browser.');return}const p=await Notification.requestPermission();renderSettings();if(p==='granted'){new Notification('Think Smaart Reminder',{body:'Notifications enabled successfully.'});toast('Notifications enabled')}else toast('Notification permission not enabled')}
 function showSystemNotification(title,body){if(nativeAndroid())return;if('Notification'in window&&Notification.permission==='granted')try{new Notification(title,{body,icon:'icon-192.png',badge:'icon-192.png'})}catch{}}
-function checkDueNotifications(){if(nativeAndroid())return;const now=Date.now();let changed=false;tasks.forEach(t=>{if(t.done)return;const due=dueDate(t).getTime();if(Math.abs(due-now)<30000&&(!t.notifiedAt||now-t.notifiedAt>60000)){showSystemNotification('Think Smaart Reminder',`${t.title} • ${formatTime(t.time)}`);playReminderSound(false);t.notifiedAt=now;changed=true}});if(changed)store.set('ts_tasks',tasks);resetWaterDay();if(water.interval>0&&now-water.lastReminder>=water.interval*60000){showSystemNotification('Drink Water 💧','Think Smaart: Time to drink water.');playReminderSound(false);water.lastReminder=now;store.set('ts_water',water)}}
+function checkDueNotifications(){if(nativeAndroid())return;const now=Date.now();let changed=false;tasks.forEach(t=>{if(t.done)return;const due=alarmDate(t).getTime();if(Math.abs(due-now)<30000&&(!t.notifiedAt||now-t.notifiedAt>60000)){showSystemNotification('Think Smaart Reminder',`${t.title} • ${formatTime(t.reminderTime||t.time)}`);playReminderSound(false);t.notifiedAt=now;changed=true}});if(changed)scopedSet('ts_tasks',tasks);resetWaterDay();if(water.interval>0&&now-water.lastReminder>=water.interval*60000){showSystemNotification('Drink Water 💧','Think Smaart: Time to drink water.');playReminderSound(false);water.lastReminder=now;scopedSet('ts_water',water)}}
 function exportBackup(){const blob=new Blob([JSON.stringify({profile,tasks,water,soundSettings,exportedAt:new Date().toISOString()},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='think-smaart-reminder-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast('Backup exported')}
 
 
@@ -615,14 +736,14 @@ function tryLogin(){
   const users=getUsers();
   const user=users.find(x=>String(x.email||'').toLowerCase()===u||String(x.name||'').toLowerCase()===u);
   if(!user||p!==String(user.password||'')){showAuthError('#loginError','Username / password correct ga enter cheyyandi.');return false}
-  profile={...profile,name:user.name,email:user.email,phone:user.phone||'',userId:user.id,role:user.role||'User'};
-  store.set('ts_profile',profile);
+  loadUserData(user);
+  saveProfile();
   try{
     localStorage.setItem('ts_current_user',user.id);
     if($('#rememberLogin').checked){localStorage.setItem('ts_logged_in','1');sessionStorage.removeItem('ts_logged_in')}
     else{sessionStorage.setItem('ts_logged_in','1');localStorage.removeItem('ts_logged_in')}
   }catch{}
-  renderAllData();enterApp();toast('Welcome '+profile.name);return true
+  renderAllData();enterApp();queueCloudSync('login');toast('Welcome '+profile.name);return true
 }
 function trySignup(){
   const name=$('#signupName').value.trim();
@@ -640,9 +761,9 @@ function trySignup(){
   if(users.some(x=>String(x.email||'').toLowerCase()===email)){showAuthError('#signupError','Ee email tho account already undhi. Login cheyyandi.');return false}
   const user={id:'user_'+Date.now(),name,email,phone,password:pwd,role:'User',createdAt:new Date().toISOString()};
   users.push(user);setUsers(users);
-  profile={...profile,name,email,phone,userId:user.id,role:user.role};store.set('ts_profile',profile);
+  loadUserData(user);profile={...profile,name,email,phone,userId:user.id,role:user.role};saveProfile();queueCloudSync('signup');
   try{localStorage.setItem('ts_current_user',user.id);localStorage.setItem('ts_logged_in','1');sessionStorage.removeItem('ts_logged_in')}catch{}
-  renderAllData();enterApp();toast('Account created successfully');return true
+  renderAllData();enterApp();queueCloudSync('signup');toast('Account created successfully');return true
 }
 
 // events
@@ -662,24 +783,42 @@ $('#bottomNav').addEventListener('click',e=>{const b=e.target.closest('[data-nav
 $('#fabAdd').addEventListener('click',()=>openAdd('Work'));document.addEventListener('click',e=>{const r=e.target.closest('[data-task]');if(r)openTaskSheet(r.dataset.task)});
 $('#reminderFilters').addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;filter=b.dataset.filter;$$('#reminderFilters .chip').forEach(x=>x.classList.toggle('active',x===b));renderAll()});
 $('#sheetCancel').addEventListener('click',closeTaskSheet);$('#actionModal').addEventListener('click',e=>{if(e.target===$('#actionModal'))closeTaskSheet()});
-$('#sheetComplete').addEventListener('click',()=>{const t=tasks.find(x=>x.id===activeTaskId);if(t){t.done=!t.done;store.set('ts_tasks',tasks);t.done?nativeCancelTask(t.id):nativeScheduleTask(t);renderAllData()}closeTaskSheet()});
-$('#sheetDelete').addEventListener('click',()=>{nativeCancelTask(activeTaskId);tasks=tasks.filter(x=>x.id!==activeTaskId);store.set('ts_tasks',tasks);renderAllData();closeTaskSheet();toast('Reminder deleted')});
-$('#sheetSnooze').addEventListener('click',()=>{const t=tasks.find(x=>x.id===activeTaskId);if(t){const d=new Date(Date.now()+30*60000);t.date=localDateKey(d);t.time=`${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;t.done=false;store.set('ts_tasks',tasks);nativeScheduleTask(t);renderAllData();toast('Snoozed 30 minutes')}closeTaskSheet()});
+$('#sheetComplete').addEventListener('click',()=>{const t=tasks.find(x=>x.id===activeTaskId);if(t){t.done=!t.done;saveTasks(t.done?'reminder_completed':'reminder_reopened');t.done?nativeCancelTask(t.id):nativeScheduleTask(t);renderAllData()}closeTaskSheet()});
+$('#sheetDelete').addEventListener('click',()=>{nativeCancelTask(activeTaskId);tasks=tasks.filter(x=>x.id!==activeTaskId);saveTasks('reminder_deleted');renderAllData();closeTaskSheet();toast('Reminder deleted')});
+$('#sheetSnooze').addEventListener('click',()=>{const t=tasks.find(x=>x.id===activeTaskId);if(t){const d=new Date(Date.now()+30*60000);t.reminderDate=localDateKey(d);t.reminderTime=`${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;t.done=false;saveTasks('reminder_snoozed');nativeScheduleTask(t);renderAllData();toast('Alarm snoozed 30 minutes • due date unchanged')}closeTaskSheet()});
 $('#sheetEdit').addEventListener('click',()=>editTask(activeTaskId));
 $$('.quick-btn').forEach(b=>b.addEventListener('click',()=>{quickMl=Number(b.dataset.ml);$$('.quick-btn').forEach(x=>x.classList.toggle('active',x===b))}));$('#waterPlus').addEventListener('click',()=>addWater(quickMl));$('#waterMinus').addEventListener('click',()=>addWater(-quickMl));
-$('#waterTarget').addEventListener('change',e=>{water.target=Math.max(500,Number(e.target.value)||3000);store.set('ts_water',water);renderWater()});$('#waterInterval').addEventListener('change',e=>{water.interval=Math.max(30,Number(e.target.value)||60);store.set('ts_water',water);nativeScheduleWater()});$('#waterNotify').addEventListener('click',()=>{askNotifications();nativeScheduleWater()});$('#notifyBtn').addEventListener('click',askNotifications);$('#settingsNotifications').addEventListener('click',askNotifications);
-$('#editProfile').addEventListener('click',()=>{$('#profileName').value=profile.name;$('#profileModal').classList.add('show')});$('#profileModal').addEventListener('click',e=>{if(e.target===$('#profileModal'))$('#profileModal').classList.remove('show')});$('#profileSave').addEventListener('click',()=>{profile.name=$('#profileName').value.trim()||'Srinivasulu';store.set('ts_profile',profile);$('#profileModal').classList.remove('show');renderAllData();toast('Profile saved')});
-$('#backupSetting').addEventListener('click',()=>toast('Google Sheets sync link final version lo connect cheddam.'));$('#soundSetting').addEventListener('click',openSoundSettings);$('#themeSetting').addEventListener('click',()=>toast('Think Smaart logo-colour theme active'));$('#aboutApp').addEventListener('click',()=>toast('Think Smaart Reminder • Business + Water Reminder'));
+$('#waterTarget').addEventListener('change',e=>{water.target=Math.max(500,Number(e.target.value)||3000);saveWater('water_target');renderWater()});$('#waterInterval').addEventListener('change',e=>{water.interval=Math.max(30,Number(e.target.value)||60);saveWater('water_interval');nativeScheduleWater()});$('#waterNotify').addEventListener('click',()=>{askNotifications();nativeScheduleWater()});$('#notifyBtn').addEventListener('click',askNotifications);$('#settingsNotifications').addEventListener('click',askNotifications);
+$('#editProfile').addEventListener('click',()=>{$('#profileName').value=profile.name;$('#profileEmail').value=profile.email||'';renderAvatar();$('#profileModal').classList.add('show')});
+$('#profileModal').addEventListener('click',e=>{if(e.target===$('#profileModal'))$('#profileModal').classList.remove('show')});
+async function compressProfilePhoto(file){
+  if(!file||!file.type.startsWith('image/'))throw new Error('image');
+  const data=await new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(file)});
+  const img=await new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=rej;i.src=data});
+  const size=320,c=document.createElement('canvas');c.width=size;c.height=size;const ctx=c.getContext('2d');
+  const scale=Math.max(size/img.width,size/img.height),w=img.width*scale,h=img.height*scale;ctx.drawImage(img,(size-w)/2,(size-h)/2,w,h);
+  return c.toDataURL('image/jpeg',.82);
+}
+$('#profilePhotoFile').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>8*1024*1024){toast('Profile photo 8 MB kanna takkuva undali.');return}profile.photo=await compressProfilePhoto(f);renderAvatar();toast('Profile photo selected')}catch{toast('Valid image select cheyyandi.')}});
+$('#removeProfilePhoto').addEventListener('click',()=>{profile.photo='';renderAvatar();toast('Profile photo removed')});
+$('#profileSave').addEventListener('click',()=>{profile.name=$('#profileName').value.trim()||'Srinivasulu';saveProfile();queueCloudSync('profile_updated');$('#profileModal').classList.remove('show');renderAllData();toast('Profile saved')});
+$('#backupSetting').addEventListener('click',()=>{renderSyncModal();$('#syncModal').classList.add('show')});
+$('#healthScheduleSetting').addEventListener('click',()=>{renderHealthModal();$('#healthScheduleModal').classList.add('show')});
+$('#healthScheduleModal').addEventListener('click',e=>{if(e.target===$('#healthScheduleModal'))$('#healthScheduleModal').classList.remove('show')});
+$('#lunchTime').addEventListener('input',updateHealthPreview);$('#lunchBreakMinutes').addEventListener('input',updateHealthPreview);
+$('#saveHealthSchedule').addEventListener('click',()=>{healthSchedule={enabled:$('#healthEnabled').checked,breakfast:$('#breakfastTime').value||'08:00',lunch:$('#lunchTime').value||'13:00',dinner:$('#dinnerTime').value||'20:00',breakMinutes:Math.max(15,Math.min(240,Number($('#lunchBreakMinutes').value)||90))};saveHealth('health_schedule_changed');nativeRequestPermissions();nativeScheduleHealth();renderSettings();$('#healthScheduleModal').classList.remove('show');toast(healthSchedule.enabled?'Daily meal & back-to-work alarms saved':'Health alarms turned off')});
+$('#syncModal').addEventListener('click',e=>{if(e.target===$('#syncModal'))$('#syncModal').classList.remove('show')});
+$('#saveSyncSettings').addEventListener('click',()=>{const url=$('#syncUrl').value.trim(),key=$('#syncKey').value.trim();if(url&&!/^https:\/\/script\.google\.com\//i.test(url)){toast('Valid Google Apps Script Web App URL enter cheyyandi.');return}syncSettings={...syncSettings,url,key,enabled:!!url,lastOk:false,lastMessage:url?'Ready to sync':'Not connected'};store.set('ts_sync_settings',syncSettings);try{if(nativeAndroid())window.NativeApp.setGoogleSheetsConfig(url,key)}catch{}renderSettings();renderSyncModal();if(url)cloudSync('manual_setup',true);else toast('Google Sheets sync disconnected')});$('#soundSetting').addEventListener('click',openSoundSettings);$('#themeSetting').addEventListener('click',()=>toast('Think Smaart logo-colour theme active'));$('#aboutApp').addEventListener('click',()=>toast('Think Smaart Reminder • Business + Water + Health Schedule'));
 $('#soundModal').addEventListener('click',e=>{if(e.target===$('#soundModal'))closeSoundSettings()});
 $('#soundChoices').addEventListener('click',e=>{const b=e.target.closest('[data-sound-mode]');if(!b)return;soundSettings.mode=b.dataset.soundMode;$$('#soundChoices .sound-choice').forEach(x=>x.classList.toggle('active',x===b));$('#soundCurrentTitle').textContent=soundLabel(soundSettings.mode);$('#soundCurrentFile').textContent=soundSettings.mode==='custom'?(soundSettings.customName||'Upload your sound below'):'Built-in reminder sound'});
-$('#customSoundFile').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;if(file.size>25*1024*1024){toast('Sound file 25 MB kanna takkuva undali.');e.target.value='';return}if(file.type&&!file.type.startsWith('audio/')){toast('Audio file select cheyyandi.');e.target.value='';return}try{await saveCustomSoundBlob(file);soundSettings.customName=file.name;soundSettings.mode='custom';store.set('ts_sound_settings',soundSettings);if(nativeAndroid()){const reader=new FileReader();reader.onload=()=>{try{window.NativeApp.saveCustomSound(String(reader.result||''),file.type||'audio/*',file.name)}catch{}};reader.readAsDataURL(file)}$('#customSoundFileName').textContent=file.name;$('#soundCurrentTitle').textContent=file.name;$('#soundCurrentFile').textContent='My custom reminder sound';$('#removeCustomSound').disabled=false;$$('#soundChoices .sound-choice').forEach(x=>x.classList.toggle('active',x.dataset.soundMode==='custom'));toast('Custom sound added');await playReminderSound(true)}catch{toast('Sound save avvaledu. Vere audio file try cheyyandi.')}});
+$('#customSoundFile').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;if(file.size>25*1024*1024){toast('Sound file 25 MB kanna takkuva undali.');e.target.value='';return}if(file.type&&!file.type.startsWith('audio/')){toast('Audio file select cheyyandi.');e.target.value='';return}try{await saveCustomSoundBlob(file);soundSettings.customName=file.name;soundSettings.mode='custom';saveSound('sound_changed');if(nativeAndroid()){const reader=new FileReader();reader.onload=()=>{try{window.NativeApp.saveCustomSound(String(reader.result||''),file.type||'audio/*',file.name)}catch{}};reader.readAsDataURL(file)}$('#customSoundFileName').textContent=file.name;$('#soundCurrentTitle').textContent=file.name;$('#soundCurrentFile').textContent='My custom reminder sound';$('#removeCustomSound').disabled=false;$$('#soundChoices .sound-choice').forEach(x=>x.classList.toggle('active',x.dataset.soundMode==='custom'));toast('Custom sound added');await playReminderSound(true)}catch{toast('Sound save avvaledu. Vere audio file try cheyyandi.')}});
 $('#previewSound').addEventListener('click',()=>playReminderSound(true));
-$('#removeCustomSound').addEventListener('click',async()=>{await deleteCustomSoundBlob();try{if(nativeAndroid())window.NativeApp.removeCustomSound()}catch{}soundSettings.customName='';if(soundSettings.mode==='custom')soundSettings.mode='bell';store.set('ts_sound_settings',soundSettings);nativeApplySoundSettings();$('#customSoundFile').value='';$('#customSoundFileName').textContent='No custom sound selected';$('#soundCurrentTitle').textContent=soundLabel();$('#soundCurrentFile').textContent='Built-in reminder sound';$('#removeCustomSound').disabled=true;$$('#soundChoices .sound-choice').forEach(x=>x.classList.toggle('active',x.dataset.soundMode===soundSettings.mode));renderSettings();toast('Custom sound removed')});
+$('#removeCustomSound').addEventListener('click',async()=>{await deleteCustomSoundBlob();try{if(nativeAndroid())window.NativeApp.removeCustomSound()}catch{}soundSettings.customName='';if(soundSettings.mode==='custom')soundSettings.mode='bell';saveSound('sound_changed');nativeApplySoundSettings();$('#customSoundFile').value='';$('#customSoundFileName').textContent='No custom sound selected';$('#soundCurrentTitle').textContent=soundLabel();$('#soundCurrentFile').textContent='Built-in reminder sound';$('#removeCustomSound').disabled=true;$$('#soundChoices .sound-choice').forEach(x=>x.classList.toggle('active',x.dataset.soundMode===soundSettings.mode));renderSettings();toast('Custom sound removed')});
 $('#soundVolume').addEventListener('input',e=>{$('#soundVolumeText').textContent=`${e.target.value}%`});
-$('#saveSoundSettings').addEventListener('click',async()=>{soundSettings.volume=Number($('#soundVolume').value)||0;soundSettings.vibrate=$('#soundVibrate').checked;if(soundSettings.mode==='custom'){const rec=await getCustomSoundRecord();if(!rec){toast('Custom sound select chesaru. Mundu audio file upload cheyyandi.');return}}store.set('ts_sound_settings',soundSettings);nativeApplySoundSettings();renderSettings();closeSoundSettings();toast('Reminder sound saved')});
+$('#saveSoundSettings').addEventListener('click',async()=>{soundSettings.volume=Number($('#soundVolume').value)||0;soundSettings.vibrate=$('#soundVibrate').checked;if(soundSettings.mode==='custom'){const rec=await getCustomSoundRecord();if(!rec){toast('Custom sound select chesaru. Mundu audio file upload cheyyandi.');return}}saveSound('sound_changed');nativeApplySoundSettings();renderSettings();closeSoundSettings();toast('Reminder sound saved')});
 $('#rateApp').addEventListener('click',()=>toast('Rate App option final published version lo active avutundi.'));
 $('#shareApp').addEventListener('click',async()=>{if(navigator.share){try{await navigator.share({title:'Think Smaart Reminder',text:'Business + Water Reminder App'})}catch{}}else toast('Share option device/browser support avasaram.')});
-$('#privacyPolicy').addEventListener('click',()=>toast('Your reminder data is stored locally on this device. Google Sheets sync will be optional.'));
+$('#privacyPolicy').addEventListener('click',()=>toast('Your data is saved on this device and, when connected, synced to your configured Google Sheet. Passwords are never sent to the Sheet.'));
 $('#logoutBtn').addEventListener('click',()=>logoutUser());
 $('#menuBtn').addEventListener('click',()=>showScreen('settings'));
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e});
@@ -687,7 +826,11 @@ $('#reportDate').value=localDateKey();
 $('#reportPeriod').addEventListener('click',e=>{const b=e.target.closest('[data-period]');if(!b)return;$$('#reportPeriod .chip').forEach(x=>x.classList.toggle('active',x===b));toast(`${b.dataset.period} report selected`)});
 document.addEventListener('pointerdown',unlockAudio,{once:true});
 if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
-updateClock();setInterval(updateClock,30000);setInterval(checkDueNotifications,30000);renderCategories();resetForm();renderCategoryForm();renderAllData();if(loggedIn())enterApp();else showLogin();setTimeout(()=>{nativeSyncAll()},800);
+updateClock();setInterval(updateClock,30000);setInterval(checkDueNotifications,30000);renderCategories();resetForm();renderCategoryForm();
+const startupUserId=(()=>{try{return localStorage.getItem('ts_current_user')||'owner'}catch{return 'owner'}})();
+const startupUser=getUsers().find(u=>u.id===startupUserId)||getUsers()[0];loadUserData(startupUser);renderAllData();
+if(loggedIn()){enterApp();queueCloudSync('app_open')}else showLogin();
+setTimeout(()=>{nativeSyncAll()},800);
 </script>
 </body>
 </html>

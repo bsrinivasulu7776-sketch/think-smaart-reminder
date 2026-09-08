@@ -36,6 +36,31 @@ public class AlarmReceiver extends BroadcastReceiver {
                 return;
             }
 
+            if (kind != null && kind.startsWith("health_")) {
+                String raw = sp.getString(AlarmScheduler.KEY_HEALTH, null);
+                if (raw == null) return;
+                JSONObject cfg = new JSONObject(raw);
+                if (!cfg.optBoolean("enabled", true)) return;
+                String title = "Health Reminder";
+                String body = "Time for your healthy routine.";
+                if ("health_breakfast".equals(kind)) {
+                    title = "Breakfast Time 🍳";
+                    body = "Good morning. Breakfast time — eat a balanced meal and start the day well.";
+                } else if ("health_lunch".equals(kind)) {
+                    title = "Lunch Time 🍱";
+                    body = "Lunch time. Eat calmly, hydrate, and take your planned lunch break.";
+                } else if ("health_back".equals(kind)) {
+                    title = "Back to Work 💼";
+                    body = "Lunch break complete. Time to get back to work.";
+                } else if ("health_dinner".equals(kind)) {
+                    title = "Dinner Time 🍽️";
+                    body = "Dinner time. Keep it comfortable and avoid eating too close to bedtime when possible.";
+                }
+                NotificationHelper.showAlarm(context, id, title, body, "Health Schedule");
+                AlarmScheduler.scheduleNextHealthFromPrefs(context, kind);
+                return;
+            }
+
             String raw = sp.getString(AlarmScheduler.keyFor(id), null);
             if (raw == null) return; // reminder was completed/deleted
             JSONObject obj = new JSONObject(raw);

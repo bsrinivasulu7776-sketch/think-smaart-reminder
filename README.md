@@ -1,21 +1,12 @@
-# Think Smaart Reminder — Native Android
+# Think Smaart Reminder V12
 
-Package: `com.thinksmaart.reminder`
-
-Native features included:
-- Android AlarmManager reminders that continue when the app is closed.
-- Exact-alarm permission flow with inexact fallback.
-- Android 13+ notification permission request.
-- Full-screen lock-screen reminder activity (subject to device/full-screen permission policy).
-- Reminder re-scheduling after reboot/app update.
-- 30-minute repeat for reminders set to **Until Completed**.
-- Snooze from the native alarm screen.
-- Water reminders scheduled natively.
-- Built-in Bell / Chime / Strong Alert / Silent notification channels.
-- User-selected custom audio copied into native app storage and used for Android notification alarms.
-- Existing Think Smaart web UI embedded locally in a WebView, including signup, category forms, reports, settings and local data.
-
-## Build
-Open this folder in Android Studio, or push it to GitHub. The included GitHub Actions workflow builds an installable `app-debug.apk`.
-
-On first run, allow Notifications, Alarms & reminders, and Full-screen notifications if Android opens those settings. Android controls these permissions; apps cannot silently grant them during install.
+## New in V12
+- Existing Work, Payment, Delivery, Follow-up, Vendor, Water and Health reminders remain.
+- Due Date & Time remain separate.
+- New Reminder / Alarm Date & Time for every business reminder.
+- Popup + alarm uses Reminder Date & Time.
+- Overdue status still uses Due Date & Time.
+- Old reminders automatically use existing due date/time as their reminder time.
+- Snooze changes only alarm time, not due date.
+- Google Sheets sync includes Due Date, Due Time, Reminder Date and Reminder Time.
+- Google Apps Script mapping fixed to use app `details` fields.

@@ -23,6 +23,12 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 public class MainActivity extends Activity {
@@ -150,6 +156,16 @@ public class MainActivity extends Activity {
         }
 
         @JavascriptInterface
+        public void scheduleHealthSchedule(String json) {
+            try {
+                JSONObject obj = new JSONObject(json == null ? "{}" : json);
+                AlarmScheduler.scheduleHealth(appContext, obj);
+            } catch (Exception e) {
+                runOnUiThread(() -> Toast.makeText(MainActivity.this, "Health schedule error", Toast.LENGTH_SHORT).show());
+            }
+        }
+
+        @JavascriptInterface
         public void setSoundMode(String mode, boolean vibrate) {
             appContext.getSharedPreferences(NotificationHelper.PREFS, MODE_PRIVATE)
                     .edit().putString("sound_mode", mode == null ? "bell" : mode)
@@ -179,6 +195,91 @@ public class MainActivity extends Activity {
             } catch (Exception e) {
                 runOnUiThread(() -> Toast.makeText(MainActivity.this, "Custom sound native save avvaledu", Toast.LENGTH_SHORT).show());
             }
+        }
+
+
+
+        @JavascriptInterface
+        public void setGoogleSheetsConfig(String url, String key) {
+            appContext.getSharedPreferences("think_smaart_sync", MODE_PRIVATE)
+                    .edit()
+                    .putString("url", url == null ? "" : url.trim())
+                    .putString("key", key == null ? "" : key)
+                    .apply();
+        }
+
+        @JavascriptInterface
+        public String getGoogleSheetsUrl() {
+            return appContext.getSharedPreferences("think_smaart_sync", MODE_PRIVATE)
+                    .getString("url", "");
+        }
+
+        @JavascriptInterface
+        public void syncToGoogleSheets(String payload) {
+            final String endpoint = appContext.getSharedPreferences("think_smaart_sync", MODE_PRIVATE)
+                    .getString("url", "");
+            if (endpoint == null || endpoint.trim().isEmpty()) {
+                notifySyncResult(false, "Google Sheets URL not configured");
+                return;
+            }
+
+            new Thread(() -> {
+                HttpURLConnection conn = null;
+                try {
+                    URL url = new URL(endpoint.trim());
+                    conn = (HttpURLConnection) url.openConnection();
+                    conn.setRequestMethod("POST");
+                    conn.setConnectTimeout(15000);
+                    conn.setReadTimeout(20000);
+                    conn.setInstanceFollowRedirects(true);
+                    conn.setDoOutput(true);
+                    conn.setRequestProperty("Content-Type", "text/plain; charset=UTF-8");
+                    conn.setRequestProperty("Accept", "application/json,text/plain,*/*");
+
+                    byte[] body = (payload == null ? "{}" : payload).getBytes(StandardCharsets.UTF_8);
+                    conn.setFixedLengthStreamingMode(body.length);
+                    try (OutputStream os = conn.getOutputStream()) {
+                        os.write(body);
+                    }
+
+                    int code = conn.getResponseCode();
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(
+                            (code >= 200 && code < 400) ? conn.getInputStream() : conn.getErrorStream(),
+                            StandardCharsets.UTF_8));
+                    StringBuilder response = new StringBuilder();
+                    String line;
+                    while ((line = reader.readLine()) != null) response.append(line);
+                    reader.close();
+
+                    boolean ok = code >= 200 && code < 300;
+                    String msg = ok ? "Synced to Google Sheets" : ("HTTP " + code);
+                    try {
+                        JSONObject resp = new JSONObject(response.toString());
+                        if (resp.has("ok")) ok = resp.optBoolean("ok", ok);
+                        if (resp.has("message")) msg = resp.optString("message", msg);
+                        else if (resp.has("error")) msg = resp.optString("error", msg);
+                    } catch (Exception ignored) {}
+                    notifySyncResult(ok, msg);
+                } catch (Exception e) {
+                    notifySyncResult(false, "Sync error: " + e.getClass().getSimpleName());
+                } finally {
+                    if (conn != null) conn.disconnect();
+                }
+            }).start();
+        }
+
+        private void notifySyncResult(boolean ok, String message) {
+            runOnUiThread(() -> {
+                if (webView == null) return;
+                try {
+                    JSONObject o = new JSONObject();
+                    o.put("ok", ok);
+                    o.put("message", message == null ? "" : message);
+                    String js = "window.onNativeSyncResult && window.onNativeSyncResult(" +
+                            (ok ? "true" : "false") + "," + JSONObject.quote(o.optString("message")) + ");";
+                    webView.evaluateJavascript(js, null);
+                } catch (Exception ignored) {}
+            });
         }
 
         @JavascriptInterface
