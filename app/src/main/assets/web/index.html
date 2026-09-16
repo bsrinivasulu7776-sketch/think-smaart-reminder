@@ -83,7 +83,7 @@ body{display:flex;justify-content:center;align-items:flex-start;background:radia
 .intake-list{margin-top:12px;text-align:left}.intake-item{display:grid;grid-template-columns:30px 1fr auto;align-items:center;border-bottom:1px solid #edf2f7;padding:11px 2px;font-size:12px}.intake-item:last-child{border-bottom:0}.intake-item .time{color:#6c84a4}
 .report-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:13px 0}.report-stats .stat{height:73px}.report-stats .stat strong{font-size:23px}.report-stats .stat span{font-size:9px}.date-select{display:flex;align-items:center;gap:8px;background:#fff;border-radius:12px;padding:9px 12px;border:1px solid #d9e5f1;margin-top:12px}.date-select input{border:0;outline:0;background:transparent;width:100%;color:#315a8a}
 .category-report{background:#fff;border-radius:16px;box-shadow:var(--shadow);overflow:hidden}.category-report .rowr{display:grid;grid-template-columns:36px 1fr auto;align-items:center;padding:11px 12px;border-bottom:1px solid #edf2f7;font-size:13px;font-weight:750}.category-report .rowr:last-child{border-bottom:0}.rowr .r-ico{width:30px;height:30px;border-radius:8px;color:#fff;display:grid;place-items:center}
-.settings-card{background:#fff;border-radius:16px;box-shadow:var(--shadow);overflow:hidden}.profile{display:grid;grid-template-columns:54px 1fr auto;gap:10px;align-items:center;padding:15px 13px;border-bottom:1px solid #edf2f7}.avatar{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#078fe0,#0741a4);font-size:25px;overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover;display:block}.profile b{display:block;font-size:14px}.profile span{font-size:10px;color:var(--muted)}.setting-row{width:100%;border:0;background:#fff;display:grid;grid-template-columns:28px 1fr auto;align-items:center;text-align:left;padding:14px 13px;border-bottom:1px solid #edf2f7;color:var(--ink);font-size:13px}.setting-row:last-child{border-bottom:0}.setting-row .arrow{color:#9bb0ca;font-size:18px}.setting-row .subtext{font-size:10px;color:var(--muted);margin-top:2px}.logout{width:100%;border:0;border-radius:10px;background:#ff4a45;color:#fff;font-weight:850;padding:12px;margin-top:16px}
+.settings-card{background:#fff;border-radius:16px;box-shadow:var(--shadow);overflow:hidden}.profile{width:100%;border:0;background:#fff;color:var(--ink);text-align:left;display:grid;grid-template-columns:54px 1fr auto;gap:10px;align-items:center;padding:15px 13px;border-bottom:1px solid #edf2f7;cursor:pointer}.avatar{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#078fe0,#0741a4);font-size:25px;overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover;display:block}.profile b{display:block;font-size:14px}.profile span{font-size:10px;color:var(--muted)}.setting-row{width:100%;border:0;background:#fff;display:grid;grid-template-columns:28px 1fr auto;align-items:center;text-align:left;padding:14px 13px;border-bottom:1px solid #edf2f7;color:var(--ink);font-size:13px}.setting-row:last-child{border-bottom:0}.setting-row .arrow,.profile .arrow{color:#9bb0ca;font-size:18px}.setting-row .subtext{font-size:10px;color:var(--muted);margin-top:2px}.logout{width:100%;border:0;border-radius:10px;background:#ff4a45;color:#fff;font-weight:850;padding:12px;margin-top:16px}
 
 
 /* category-specific reminder forms */
@@ -130,10 +130,21 @@ body{display:flex;justify-content:center;align-items:flex-start;background:radia
 .sound-note{font-size:10px;line-height:1.45;color:#7189a8;margin:12px 2px 0;padding:10px 11px;background:#f4f8fc;border-radius:10px}
 
 .copyright-footer{margin:20px 4px 0;padding:14px 8px 2px;text-align:center;color:#6d84a4;font-size:9.5px;line-height:1.5;border-top:1px solid #e3edf7}
-.profile-photo-box{display:flex;align-items:center;gap:13px;padding:10px 0 2px}.profile-photo-preview{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#0aa6ed,#0755c7);display:grid;place-items:center;color:#fff;font-size:31px;font-weight:900;overflow:hidden;box-shadow:0 8px 20px rgba(5,91,180,.18)}.profile-photo-preview img{width:100%;height:100%;object-fit:cover}.photo-actions{display:flex;flex:1;flex-direction:column;gap:7px}.photo-upload{display:block;border:1px solid #cfddeb;background:#f7fbff;border-radius:11px;padding:10px 11px;text-align:center;font-size:11px;font-weight:850;color:#086dcc;cursor:pointer}.photo-upload input{display:none}.photo-remove{border:0;background:#fff0f1;color:#d83a43;border-radius:10px;padding:9px 10px;font-size:10.5px;font-weight:850}
+.profile-photo-box{display:flex;align-items:center;gap:13px;padding:10px 0 2px}.profile-photo-preview{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#0aa6ed,#0755c7);display:grid;place-items:center;color:#fff;font-size:31px;font-weight:900;overflow:hidden;box-shadow:0 8px 20px rgba(5,91,180,.18)}.profile-photo-preview img{width:100%;height:100%;object-fit:cover}.photo-actions{display:flex;flex:1;flex-direction:column;gap:7px}.photo-upload{display:block;border:1px solid #cfddeb;background:#f7fbff;border-radius:11px;padding:10px 11px;text-align:center;font-size:11px;font-weight:850;color:#086dcc;cursor:pointer}.photo-upload input{display:none}.photo-remove{border:0;background:#fff0f1;color:#d83a43;border-radius:10px;padding:9px 10px;font-size:10.5px;font-weight:850}.profile-size-note{margin:9px 0 3px;padding:9px 11px;border-radius:10px;background:#eef7ff;color:#55759b;font-size:10px;line-height:1.45}.profile-size-note b{color:#086dcc}.settings-info{font-size:11px;line-height:1.55;color:#5f789a;background:#f6f9fd;border:1px solid #dfebf6;border-radius:12px;padding:11px 12px;margin:8px 0}.settings-info b{color:#0a68c9}.settings-status{display:flex;align-items:center;gap:9px;padding:11px 12px;border:1px solid #dce9f5;background:#f6fbff;border-radius:12px;margin:8px 0 12px}.settings-status .status-dot{width:10px;height:10px;border-radius:50%;background:#ffab16;flex:0 0 10px}.settings-status .status-dot.ok{background:#10b96f}.settings-status b{display:block;font-size:12px}.settings-status span{display:block;color:var(--muted);font-size:10px;margin-top:2px}.rating-stars{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin:12px 0}.rating-star{border:1px solid #d7e4f1;background:#f8fbff;border-radius:12px;padding:11px 3px;font-size:25px;color:#9eb0c6}.rating-star.active{background:#fff7dc;border-color:#ffc84a;color:#ffad00}.modal-copy{font-size:11px;line-height:1.6;color:#526f93}.modal-copy h4{margin:12px 0 4px;color:var(--ink);font-size:12px}.secondary-btn{width:100%;border:1px solid #cfe0ef;background:#f7fbff;color:#0a68c9;border-radius:13px;padding:13px;margin-top:9px;font-weight:850}.app-shell.theme-dark .settings-info,.app-shell.theme-dark .settings-status,.app-shell.theme-dark .modal-copy,.app-shell.theme-dark .profile-size-note{background:#0e1d37;color:#c9d8ea;border-color:#2b456c}.app-shell.theme-dark .modal-copy h4{color:#eef5ff}
 .sync-status{display:flex;gap:8px;align-items:flex-start;padding:10px 11px;background:#f4f9ff;border:1px solid #dbe9f7;border-radius:12px;margin:9px 0 12px}.sync-dot{width:9px;height:9px;border-radius:50%;background:#9bb0c9;margin-top:4px;flex:0 0 9px}.sync-dot.ok{background:#10b96f}.sync-dot.err{background:#ff4545}.sync-status b{display:block;font-size:12px}.sync-status span{display:block;font-size:10px;color:var(--muted);margin-top:2px;line-height:1.35}.sync-help{font-size:10px;line-height:1.5;color:#6e86a5;background:#f6f9fd;border-radius:11px;padding:10px 11px;margin:10px 0 0}.sync-help strong{color:#0a6fd4}
 .health-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.health-time-card{background:#f7fbff;border:1px solid #d7e6f5;border-radius:13px;padding:10px}.health-time-card label{display:block;font-size:11px;font-weight:850;margin-bottom:6px}.health-time-card input{width:100%;height:42px;border:1px solid #cbd9e9;border-radius:10px;background:#fff;padding:0 9px;color:var(--ink);font-weight:750}.health-note{font-size:10px;line-height:1.45;color:#6d84a4;background:#f4f9ff;border-radius:11px;padding:10px 11px;margin:10px 0}.health-preview{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;background:linear-gradient(105deg,#eaf7ff,#f4f1ff);border:1px solid #d7e6f5;border-radius:12px;padding:11px;margin:10px 0 13px}.health-preview b{font-size:12px}.health-preview span{font-size:11px;color:#0876db;font-weight:900}.health-switch{display:flex;align-items:center;justify-content:space-between;padding:10px 0 4px}.health-switch b{font-size:13px}.health-switch small{display:block;color:var(--muted);font-size:10px;margin-top:2px}
 
+
+
+/* V15 functional editability */
+.app-shell.theme-dark,.app-shell.theme-dark .screen,.app-shell.theme-dark .home-card,.app-shell.theme-dark .page-body{background:#0b1730;color:#eef5ff}
+.app-shell.theme-dark .cat-card,.app-shell.theme-dark .reminder-row,.app-shell.theme-dark .settings-card,.app-shell.theme-dark .setting-row,.app-shell.theme-dark .profile,.app-shell.theme-dark .water-card,.app-shell.theme-dark .empty,.app-shell.theme-dark .date-select{background:#132340;color:#eef5ff}
+.app-shell.theme-dark .control,.app-shell.theme-dark .health-time-card input,.app-shell.theme-dark .inline-card select{background:#0d1d38;color:#eef5ff;border-color:#2b456c}
+.app-shell.theme-dark .page-head{background:linear-gradient(145deg,#076db7,#064b91 48%,#062b6e)}
+.app-shell.theme-light .hero,.app-shell.theme-light .page-head{background:linear-gradient(145deg,#149ce8,#0876da 48%,#0750b6)}
+.app-shell.theme-light{background:#fff}.app-shell.theme-light .screen,.app-shell.theme-light .home-card,.app-shell.theme-light .page-body{background:#f9fcff}
+.theme-choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.theme-choice{border:1px solid #cfdeed;background:#f7fbff;border-radius:13px;padding:13px 5px;font-weight:850;color:var(--ink)}.theme-choice.active{background:#0879e8;color:#fff;border-color:#0879e8}
+.water-entry-action{border:0;background:transparent;color:#0879e8;font-weight:850;padding:6px 3px}.water-edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 
 @media (min-width:431px){.app-shell{margin:14px 0;border-radius:28px;min-height:calc(100vh - 28px);max-height:calc(100vh - 28px);overflow-y:auto}.bottom-nav{bottom:14px;border-radius:0 0 28px 28px}.screen{min-height:calc(100vh - 28px)}.fab{right:calc((100vw - 430px)/2 + 18px);bottom:98px}}
 </style>
@@ -236,6 +247,7 @@ body{display:flex;justify-content:center;align-items:flex-start;background:radia
       <div class="field"><label>Priority</label><div class="priority-grid"><button class="priority-btn high active" data-priority="High">✓ High</button><button class="priority-btn medium" data-priority="Medium">● Medium</button><button class="priority-btn low" data-priority="Low">↓ Low</button></div></div>
       <div class="field"><label id="notesLabel">Notes</label><textarea class="control" id="fNotes" placeholder="Add reminder details..."></textarea></div>
       <div class="inline-card"><div class="left-ico">⟳</div><strong>Repeat Reminder</strong><select id="fRepeat"><option>Until Completed</option><option>Every 30 Minutes</option><option>Every 1 Hour</option><option>Every 3 Hours</option><option>Daily</option><option>Once</option></select></div>
+      <div class="field"><label>Work / Reminder Status</label><select class="control" id="fStatus"><option value="Pending">Pending</option><option value="Completed">Completed</option></select><div class="field-hint">Work complete ayyaka Completed select chesi Save cheyyandi. Completed ga marchite alarm automatic ga stop avuthundi.</div></div>
       <div class="field"><label>📎 Add Reference (Image / File)</label><label class="file-box" for="fFile"><span>☁</span><span class="file-name" id="fileName">Choose File / Add Image</span><input id="fFile" type="file"></label></div>
       <button class="primary" id="saveReminder">Save Reminder</button>
     </div>
@@ -295,15 +307,15 @@ body{display:flex;justify-content:center;align-items:flex-start;background:radia
     </div>
     <div class="page-body">
       <div class="settings-card">
-        <div class="profile"><div class="avatar" id="settingsAvatar">♙</div><div><b id="settingsName">Srinivasulu</b><span id="settingsEmail">thinksmaart.tpt@gmail.com</span></div><span class="arrow">›</span></div>
+        <button class="profile" id="profileHeader" type="button"><div class="avatar" id="settingsAvatar">♙</div><div><b id="settingsName">Srinivasulu</b><span id="settingsEmail">thinksmaart.tpt@gmail.com</span><span id="settingsPhone"></span></div><span class="arrow">›</span></button>
         <button class="setting-row" id="editProfile"><span>♙</span><span>Edit Profile</span><span class="arrow">›</span></button>
-        <button class="setting-row" id="settingsNotifications"><span>♧</span><span>Notifications</span><span class="arrow">›</span></button>
+        <button class="setting-row" id="settingsNotifications"><span>🔔</span><span><b>Notifications</b><div class="subtext" id="notificationSummary">Tap to check permissions</div></span><span class="arrow">›</span></button>
         <button class="setting-row" id="soundSetting"><span>🔊</span><span><b>Reminder Sound</b><div class="subtext" id="soundSummary">Think Smaart Bell</div></span><span class="arrow">›</span></button>
         <button class="setting-row" id="healthScheduleSetting"><span>🍽️</span><span><b>Meals &amp; Lunch Break</b><div class="subtext" id="healthScheduleSummary">Breakfast 8:00 • Lunch 1:00 • Dinner 8:00</div></span><span class="arrow">›</span></button>
-        <button class="setting-row" id="themeSetting"><span>◉</span><span>Theme &amp; Appearance</span><span class="arrow">›</span></button>
+        <button class="setting-row" id="themeSetting"><span>◉</span><span><b>Theme &amp; Appearance</b><div class="subtext" id="themeSummary">Think Smaart • Normal text</div></span><span class="arrow">›</span></button>
         <button class="setting-row" id="backupSetting"><span>☁</span><span><b>Google Sheets Sync</b><div class="subtext" id="syncSummary">Not connected</div></span><span class="arrow">›</span></button>
-        <button class="setting-row" id="rateApp"><span>☆</span><span>Rate App</span><span class="arrow">›</span></button>
-        <button class="setting-row" id="shareApp"><span>⌯</span><span>Share App</span><span class="arrow">›</span></button>
+        <button class="setting-row" id="rateApp"><span>☆</span><span><b>Rate App</b><div class="subtext" id="ratingSummary">Tap to rate Think Smaart</div></span><span class="arrow">›</span></button>
+        <button class="setting-row" id="shareApp"><span>↗</span><span><b>Share App</b><div class="subtext">Share Think Smaart details</div></span><span class="arrow">›</span></button>
         <button class="setting-row" id="privacyPolicy"><span>▣</span><span>Privacy Policy</span><span class="arrow">›</span></button>
         <button class="setting-row" id="aboutApp"><span>ⓘ</span><span>About App</span><span class="arrow">›</span></button>
       </div>
@@ -322,9 +334,12 @@ body{display:flex;justify-content:center;align-items:flex-start;background:radia
 </div>
 <div class="modal-backdrop" id="actionModal"><div class="sheet"><div class="sheet-handle"></div><h3 id="sheetTitle">Reminder</h3><div class="sheet-actions"><button id="sheetComplete">✓ Mark Complete</button><button id="sheetEdit">✎ Edit Reminder</button><button id="sheetSnooze">⏱ Snooze 30 Minutes</button><button class="danger" id="sheetDelete">🗑 Delete Reminder</button><button id="sheetCancel">Cancel</button></div></div></div>
 <div class="modal-backdrop" id="profileModal"><div class="sheet"><div class="sheet-handle"></div><h3>Edit Profile</h3>
-  <div class="profile-photo-box"><div class="profile-photo-preview" id="profilePhotoPreview">S</div><div class="photo-actions"><label class="photo-upload" for="profilePhotoFile">📷 Upload Profile Photo<input id="profilePhotoFile" type="file" accept="image/*"></label><button class="photo-remove" id="removeProfilePhoto" type="button">Remove Photo</button></div></div>
+  <div class="profile-photo-box"><div class="profile-photo-preview" id="profilePhotoPreview">S</div><div class="photo-actions"><label class="photo-upload" for="profilePhotoFile">📷 Upload Profile Photo<input id="profilePhotoFile" type="file" accept="image/jpeg,image/png,image/webp"></label><button class="photo-remove" id="removeProfilePhoto" type="button">Remove Photo</button></div></div>
+  <div class="profile-size-note"><b>Profile Photo Size:</b> 500 × 500 px recommended • Square 1:1 • JPG / PNG / WebP • Maximum 5 MB. Bigger images are automatically center-cropped to 500 × 500 px.</div>
   <div class="field"><label>Name</label><input class="control" id="profileName" value="Srinivasulu"></div>
-  <div class="field"><label>Email</label><input class="control" id="profileEmail" value="thinksmaart.tpt@gmail.com" disabled></div>
+  <div class="field"><label>Email</label><input class="control" id="profileEmail" type="email" value="thinksmaart.tpt@gmail.com"></div>
+  <div class="field"><label>Mobile Number</label><input class="control" id="profilePhone" type="tel" inputmode="numeric" maxlength="10" placeholder="10 digit mobile number"></div>
+  <div class="field-hint">Name, email, mobile and photo anni edit cheyyachu. Email change chesthe next login / Forgot Password ki new email use cheyyandi.</div>
   <button class="primary" id="profileSave">Save Profile</button>
 </div></div>
 <div class="modal-backdrop" id="syncModal"><div class="sheet"><div class="sheet-handle"></div><h3>Google Sheets Sync</h3>
@@ -362,6 +377,39 @@ body{display:flex;justify-content:center;align-items:flex-start;background:radia
   <div class="sound-note">Custom audio is stored only on this device in the app. You can replace it anytime from Settings → Reminder Sound.</div>
   <button class="primary" id="saveSoundSettings">Save Reminder Sound</button>
 </div></div>
+<div class="modal-backdrop" id="themeModal"><div class="sheet"><div class="sheet-handle"></div><h3>Theme &amp; Appearance</h3>
+  <div class="theme-choice-grid" id="themeChoices"><button class="theme-choice active" data-theme="smart">Think Smaart</button><button class="theme-choice" data-theme="light">Light</button><button class="theme-choice" data-theme="dark">Dark</button></div>
+  <div class="field"><label>Text Size</label><select class="control" id="uiTextSize"><option value="0.92">Small</option><option value="1" selected>Normal</option><option value="1.08">Large</option><option value="1.16">Extra Large</option></select></div>
+  <button class="primary" id="saveTheme">Save Appearance</button>
+</div></div>
+<div class="modal-backdrop" id="notificationsModal"><div class="sheet"><div class="sheet-handle"></div><h3>Notifications</h3>
+  <div class="settings-status"><span class="status-dot" id="notificationStatusDot"></span><div><b id="notificationStatusTitle">Check Android Permissions</b><span id="notificationStatusText">Reminder popup, sound and lock-screen alert permissions.</span></div></div>
+  <div class="settings-info"><b>Required for reminders:</b> Notifications, Exact Alarms and Full-screen alerts. Tap below; Android will open only the permissions that still need approval.</div>
+  <button class="primary" id="enableNotifications">Enable / Fix Permissions</button>
+  <button class="secondary-btn" id="closeNotifications">Close</button>
+</div></div>
+<div class="modal-backdrop" id="rateModal"><div class="sheet"><div class="sheet-handle"></div><h3>Rate Think Smaart</h3>
+  <div class="settings-info">Mee experience ni 1–5 stars lo select cheyyandi. Rating ee device lo save avuthundi; Play Store listing live ayyaka ide option direct store rating ki convert cheyyachu.</div>
+  <div class="rating-stars" id="ratingStars"><button class="rating-star" data-rating="1">★</button><button class="rating-star" data-rating="2">★</button><button class="rating-star" data-rating="3">★</button><button class="rating-star" data-rating="4">★</button><button class="rating-star" data-rating="5">★</button></div>
+  <button class="primary" id="saveRating">Save Rating</button>
+</div></div>
+<div class="modal-backdrop" id="privacyModal"><div class="sheet sound-sheet"><div class="sheet-handle"></div><h3>Privacy Policy</h3>
+  <div class="modal-copy"><h4>Account Security</h4>Passwords readable text ga Google Sheets lo store cheyyamu. Secure password verification data matrame use chestam.
+  <h4>Business Data</h4>Reminders, profile details, water and health schedule data owner Google Sheet sync kosam use avuthayi.
+  <h4>Profile Photo</h4>Selected photo app profile display/sync kosam use avuthundi. Photo upload optional.
+  <h4>Permissions</h4>Notifications, exact alarms and full-screen intent reminders correct time ki alert ivvadaniki use avuthayi.
+  <h4>Control</h4>User app lo profile/reminder data edit cheyyachu. Logout app session ni close chestundi.</div>
+  <button class="primary" id="closePrivacy">Close</button>
+</div></div>
+<div class="modal-backdrop" id="aboutModal"><div class="sheet"><div class="sheet-handle"></div><h3>About Think Smaart</h3>
+  <div class="settings-info"><b>Think Smaart Reminder V15.2 Live</b><br>Business reminders • Payment • Delivery • Follow-up • Vendor • Water • Health schedule • Google Sheets sync.</div>
+  <div class="modal-copy"><h4>Live Update</h4>App UI and business-flow corrections GitHub live UI nundi automatic ga refresh avuthayi. New APK pampakunda normal UI/form corrections next app open lo apply avuthayi.<h4>Created By</h4>Think Smaart • B Srinivasulu<br>thinksmaart.in</div>
+  <button class="primary" id="closeAbout">Close</button>
+</div></div>
+<div class="modal-backdrop" id="waterEditModal"><div class="sheet"><div class="sheet-handle"></div><h3>Edit Water Entry</h3>
+  <input type="hidden" id="waterEditIndex"><div class="water-edit-grid"><div class="field"><label>Amount (ml)</label><input class="control" id="waterEditMl" type="number" min="0" step="50"></div><div class="field"><label>Time</label><input class="control" id="waterEditTime" type="time"></div></div>
+  <button class="primary" id="saveWaterEntry">Save Water Entry</button><button class="logout" id="deleteWaterEntry" type="button">Delete Water Entry</button>
+</div></div>
 <div class="toast" id="toast"></div>
 <script>
 const CATEGORY_INFO={
@@ -393,7 +441,7 @@ const FORM_SCHEMAS={
       {key:'paymentFor',label:'Payment For / Work',required:true,placeholder:'e.g. Flex Printing'},
       {key:'totalAmount',label:'Total Amount',type:'money',placeholder:'0.00'},
       {key:'paidAmount',label:'Paid / Advance',type:'money',placeholder:'0.00'},
-      {key:'balanceAmount',label:'Balance Amount',type:'money',placeholder:'0.00',readonly:true},
+      {key:'balanceAmount',label:'Balance Amount',type:'money',placeholder:'0.00',readonly:true,hint:'Automatic: Total - Paid / Advance'},
       {key:'paymentMethod',label:'Expected Payment Method',type:'select',options:['UPI','Cash','Bank Transfer','Card','Cheque','Other']}
     ]
   },
@@ -452,9 +500,10 @@ const DEFAULT_SOUND={mode:'bell',customName:'',volume:85,vibrate:true};
 const DEFAULT_HEALTH={enabled:true,breakfast:'08:00',lunch:'13:00',dinner:'20:00',breakMinutes:90};
 let profile={name:'Srinivasulu',email:'thinksmaart.tpt@gmail.com',userId:'owner',role:'Owner',photo:''};
 let tasks=[],water={...DEFAULT_WATER},soundSettings={...DEFAULT_SOUND},healthSchedule={...DEFAULT_HEALTH};
+const DEFAULT_UI={theme:'smart',textScale:1};let uiSettings={...DEFAULT_UI};let reportPeriod='Daily';
 const FALLBACK_SYNC_URL='https://script.google.com/macros/s/AKfycbwSKFmz2JlmxOrW3hpW-rlf2MvQdIJa6ZnmutHgCEg66aPi5NtdlibcFPdnOoPNY5aL/exec';
 const BUILT_IN_SYNC_URL=(()=>{try{return (window.NativeApp&&typeof window.NativeApp.getBuiltInSyncUrl==='function'&&window.NativeApp.getBuiltInSyncUrl())||FALLBACK_SYNC_URL}catch{return FALLBACK_SYNC_URL}})();
-const BUILT_IN_SYNC_KEY=(()=>{try{return (window.NativeApp&&typeof window.NativeApp.getBuiltInSyncKey==='function'&&window.NativeApp.getBuiltInSyncKey())||''}catch{return ''}})();
+const BUILT_IN_SYNC_KEY=''; // V15: secret never exposed to WebView JavaScript; native bridge injects it into requests.
 let syncSettings=store.get('ts_sync_settings',{url:BUILT_IN_SYNC_URL,key:BUILT_IN_SYNC_KEY,enabled:true,lastAt:0,lastOk:false,lastMessage:'Automatic sync enabled'});
 syncSettings={...syncSettings,url:BUILT_IN_SYNC_URL,key:BUILT_IN_SYNC_KEY,enabled:true,lastMessage:syncSettings.lastMessage||'Automatic sync enabled'};
 store.set('ts_sync_settings',syncSettings);
@@ -471,10 +520,11 @@ function loadUserData(user){
   const legacyWater=uid==='owner'?store.get('ts_water',DEFAULT_WATER):DEFAULT_WATER;
   const legacySound=uid==='owner'?store.get('ts_sound_settings',DEFAULT_SOUND):DEFAULT_SOUND;
   const legacyHealth=uid==='owner'?store.get('ts_health_schedule',DEFAULT_HEALTH):DEFAULT_HEALTH;
-  tasks=store.get(`ts_tasks_${uid}`,legacyTasks||[]).map(t=>({...t,reminderDate:t.reminderDate||t.date,reminderTime:t.reminderTime||t.time}));
+  tasks=store.get(`ts_tasks_${uid}`,legacyTasks||[]).map(t=>({...t,id:String(t.id??Date.now()),reminderDate:t.reminderDate||t.date,reminderTime:t.reminderTime||t.time}));
   water=store.get(`ts_water_${uid}`,{...DEFAULT_WATER,...(legacyWater||{})});
   soundSettings=store.get(`ts_sound_settings_${uid}`,{...DEFAULT_SOUND,...(legacySound||{})});
   healthSchedule=store.get(`ts_health_schedule_${uid}`,{...DEFAULT_HEALTH,...(legacyHealth||{})});
+  uiSettings=store.get(`ts_ui_settings_${uid}`,{...DEFAULT_UI});applyUiSettings();
   store.set(`ts_profile_${uid}`,profile);
 }
 function saveProfile(){scopedSet('ts_profile',profile)}
@@ -482,6 +532,8 @@ function saveTasks(reason='tasks'){scopedSet('ts_tasks',tasks);queueCloudSync(re
 function saveWater(reason='water'){scopedSet('ts_water',water);queueCloudSync(reason)}
 function saveSound(reason='sound'){scopedSet('ts_sound_settings',soundSettings);queueCloudSync(reason)}
 function saveHealth(reason='health_schedule'){scopedSet('ts_health_schedule',healthSchedule);queueCloudSync(reason)}
+function saveUiSettings(){scopedSet('ts_ui_settings',uiSettings);applyUiSettings()}
+function applyUiSettings(){const sh=$('#appShell');if(!sh)return;sh.classList.remove('theme-dark','theme-light');if(uiSettings.theme==='dark')sh.classList.add('theme-dark');if(uiSettings.theme==='light')sh.classList.add('theme-light');sh.style.zoom=String(Number(uiSettings.textScale)||1)}
 let audioCtx=null,customAudioBuffer=null,audioUnlocked=false;
 let selectedType='Work', selectedPriority='High', filter='All', activeTaskId=null, editTaskId=null, quickMl=250, deferredPrompt=null;
 
@@ -489,14 +541,17 @@ let selectedType='Work', selectedPriority='High', filter='All', activeTaskId=nul
 // Native Android bridge helpers. In a normal browser/PWA these safely do nothing.
 function nativeAndroid(){return !!(window.NativeApp&&typeof window.NativeApp.scheduleReminder==='function')}
 function nativeRequestPermissions(){try{if(nativeAndroid())window.NativeApp.requestPermissions()}catch{}}
+function nativeTaskId(id){const raw=String(id??'');if(/^\d+$/.test(raw))return Number(raw);let h=0;for(let i=0;i<raw.length;i++)h=((h*31)+raw.charCodeAt(i))|0;return Math.abs(h)||Date.now()}
 function nativeScheduleTask(t){
   if(!nativeAndroid()||!t)return;
   try{
     const payload={
-      id:Number(t.id),
+      id:nativeTaskId(t.id),
       title:t.title||'Reminder',
       category:t.type||'Work',
       triggerAt:alarmDate(t).getTime(),
+      repeatMode:t.repeat||'Until Completed',
+      repeatIntervalMinutes:(()=>{const r=String(t.repeat||'Until Completed');if(r==='Once')return 0;if(r==='Every 1 Hour')return 60;if(r==='Every 3 Hours')return 180;if(r==='Daily')return 1440;return 30})(),
       repeatUntilCompleted:String(t.repeat||'').toLowerCase().includes('until completed'),
       notes:t.notes||'',
       priority:t.priority||'High'
@@ -504,7 +559,7 @@ function nativeScheduleTask(t){
     window.NativeApp.scheduleReminder(JSON.stringify(payload));
   }catch(e){}
 }
-function nativeCancelTask(id){try{if(nativeAndroid())window.NativeApp.cancelReminder(String(id))}catch{}}
+function nativeCancelTask(id){try{if(nativeAndroid())window.NativeApp.cancelReminder(String(nativeTaskId(id)))}catch{}}
 function nativeScheduleWater(){try{if(nativeAndroid())window.NativeApp.scheduleWater(Math.max(30,Number(water.interval)||60))}catch{}}
 function nativeApplySoundSettings(){try{if(nativeAndroid())window.NativeApp.setSoundMode(soundSettings.mode||'bell',soundSettings.vibrate!==false)}catch{}}
 function nativeScheduleHealth(){try{if(nativeAndroid()&&typeof window.NativeApp.scheduleHealthSchedule==='function')window.NativeApp.scheduleHealthSchedule(JSON.stringify({...healthSchedule,userId:profile.userId||'owner'}))}catch{}}
@@ -528,7 +583,7 @@ window.onNativeBackendResult=function(requestId,ok,responseText){
   catch(e){if(ok)rec.resolve({ok:false,error:'Invalid server response'});else rec.reject(e)}
 };
 function backendRequest(action,data={}){
-  const payload={action,syncKey:BUILT_IN_SYNC_KEY,...data,appVersion:'14.0',deviceId:store.get('ts_device_id','')||''};
+  const payload={action,syncKey:BUILT_IN_SYNC_KEY,...data,appVersion:'15.2',deviceId:store.get('ts_device_id','')||''};
   if(nativeAndroid()&&typeof window.NativeApp.backendRequest==='function'){
     return new Promise((resolve,reject)=>{
       const id='req_'+Date.now()+'_'+(++backendSeq);const timer=setTimeout(()=>{backendPending.delete(id);reject(new Error('Request timeout'))},25000);
@@ -542,7 +597,7 @@ function backendRequest(action,data={}){
 function publicProfile(){return {userId:profile.userId||'owner',name:profile.name||'',email:profile.email||'',phone:profile.phone||'',role:profile.role||'User',photoSet:!!profile.photo,photoData:profile.photo||''}}
 function buildSyncPayload(reason='auto'){
   return {
-    app:'Think Smaart Reminder',appVersion:'14.0',reason,sentAt:new Date().toISOString(),
+    app:'Think Smaart Reminder',appVersion:'15.2',reason,sentAt:new Date().toISOString(),
     deviceId:store.get('ts_device_id','')||(()=>{const id='dev_'+Date.now()+'_'+Math.random().toString(36).slice(2,9);store.set('ts_device_id',id);return id})(),
     syncKey:syncSettings.key||'',
     user:publicProfile(),
@@ -669,16 +724,16 @@ function formatTime(v){if(!v)return '';const [h,m]=v.split(':').map(Number),d=ne
 function showScreen(name){$$('.screen').forEach(s=>s.classList.remove('active'));$('#screen-'+name).classList.add('active');$$('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.nav===name));if(name==='add')$$('.nav-btn').forEach(b=>b.classList.remove('active'));if(name==='reminders')renderAll();if(name==='water')renderWater();if(name==='reports')renderReports();if(name==='settings')renderSettings();document.querySelector('.app-shell').scrollTop=0;window.scrollTo(0,0)}
 function setDefaultDateTime(){const now=new Date(),later=new Date(now.getTime()+60*60*1000);const d=localDateKey(now),tm=`${String(later.getHours()).padStart(2,'0')}:${String(later.getMinutes()).padStart(2,'0')}`;$('#fDate').value=d;$('#fTime').value=tm;$('#fReminderDate').value=d;$('#fReminderTime').value=tm}
 function openAdd(cat='Work'){selectedType=cat==='Water'?'Water':cat;editTaskId=null;if(cat==='Water'){showScreen('water');return}resetForm();renderCategories();renderCategoryForm();showScreen('add')}
-function resetForm(){selectedPriority='High';setDefaultDateTime();$('#fNotes').value='';$('#fRepeat').value='Until Completed';$('#fFile').value='';$('#fileName').textContent='Choose File / Add Image';$$('.priority-btn').forEach(b=>b.classList.toggle('active',b.dataset.priority==='High'))}
+function resetForm(){selectedPriority='High';setDefaultDateTime();$('#fNotes').value='';$('#fRepeat').value='Until Completed';$('#fStatus').value='Pending';$('#fFile').value='';$('#fileName').textContent='Choose File / Add Image';$$('.priority-btn').forEach(b=>b.classList.toggle('active',b.dataset.priority==='High'))}
 function saveTask(){
   const date=$('#fDate').value,time=$('#fTime').value,reminderDate=$('#fReminderDate').value,reminderTime=$('#fReminderTime').value;if(!validateCategoryDetails())return;if(!date||!time){toast('Due date & time enter cheyyandi.');return}if(!reminderDate||!reminderTime){toast('Reminder / alarm date & time enter cheyyandi.');return}
   const details=collectCategoryDetails(), canonical=canonicalTaskFields(details);
-  const data={...canonical,details,type:selectedType,date,time,reminderDate,reminderTime,priority:selectedPriority,notes:$('#fNotes').value.trim(),repeat:$('#fRepeat').value,fileName:$('#fFile').files[0]?.name||($('#fileName').textContent==='Choose File / Add Image'?'':$('#fileName').textContent),done:false,updatedAt:Date.now()};
+  const data={...canonical,details,type:selectedType,date,time,reminderDate,reminderTime,priority:selectedPriority,notes:$('#fNotes').value.trim(),repeat:$('#fRepeat').value,fileName:$('#fFile').files[0]?.name||($('#fileName').textContent==='Choose File / Add Image'?'':$('#fileName').textContent),done:$('#fStatus').value==='Completed',updatedAt:Date.now()};
   let savedTask=null;
-  if(editTaskId){const i=tasks.findIndex(t=>t.id===editTaskId);if(i>=0){tasks[i]={...tasks[i],...data,done:tasks[i].done};savedTask=tasks[i]}toast(`${selectedType} reminder updated`)}else{savedTask={id:Date.now(),createdAt:Date.now(),...data};tasks.push(savedTask);toast(`${selectedType} reminder saved`)}
+  if(editTaskId!==null){const i=tasks.findIndex(t=>String(t.id)===String(editTaskId));if(i>=0){tasks[i]={...tasks[i],...data,id:String(tasks[i].id)};savedTask=tasks[i];toast(`${selectedType} reminder updated • ${savedTask.done?'Completed':'Pending'}`)}else{toast('Reminder edit record dorakaledhu')} }else{savedTask={id:String(Date.now()),createdAt:Date.now(),...data};tasks.push(savedTask);toast(`${selectedType} reminder saved`)}
   saveTasks(editTaskId?'reminder_updated':'reminder_created');if(savedTask){savedTask.done?nativeCancelTask(savedTask.id):nativeScheduleTask(savedTask)}editTaskId=null;renderAllData();showScreen('home');
 }
-function openTaskSheet(id){activeTaskId=Number(id);const t=tasks.find(x=>x.id===activeTaskId);if(!t)return;const info=CATEGORY_INFO[t.type]||CATEGORY_INFO.Work;$('#sheetTitle').textContent=`${info.label}: ${t.title}`;$('#sheetComplete').textContent=t.done?'↩ Mark Pending':'✓ Mark Complete';$('#actionModal').classList.add('show')}
+function openTaskSheet(id){activeTaskId=String(id);const t=tasks.find(x=>String(x.id)===activeTaskId);if(!t){toast('Reminder open avvaledu');return;}const info=CATEGORY_INFO[t.type]||CATEGORY_INFO.Work;$('#sheetTitle').textContent=`${info.label}: ${t.title}`;$('#sheetComplete').textContent=t.done?'↩ Mark Pending':'✓ Mark Complete';$('#actionModal').classList.add('show')}
 function closeTaskSheet(){$('#actionModal').classList.remove('show')}
 function legacyDetails(t){
   if(t.details)return t.details;
@@ -689,13 +744,20 @@ function legacyDetails(t){
   if(t.type==='Vendor')return {vendorName:t.customer||'',vendorWork:t.title||'',vendorType:t.workType||'Printing Vendor'};
   return {};
 }
-function editTask(id){const t=tasks.find(x=>x.id===id);if(!t)return;editTaskId=id;selectedType=t.type==='Water'?'Work':t.type;selectedPriority=t.priority||'High';renderCategories();renderCategoryForm(legacyDetails(t));$('#fDate').value=t.date;$('#fTime').value=t.time;$('#fReminderDate').value=t.reminderDate||t.date;$('#fReminderTime').value=t.reminderTime||t.time;$('#fNotes').value=t.notes||'';$('#fRepeat').value=t.repeat||'Until Completed';$('#fileName').textContent=t.fileName||'Choose File / Add Image';$$('.priority-btn').forEach(b=>b.classList.toggle('active',b.dataset.priority===selectedPriority));closeTaskSheet();showScreen('add')}
+function editTask(id){const t=tasks.find(x=>String(x.id)===String(id));if(!t){toast('Reminder edit record dorakaledhu');return;}editTaskId=String(t.id);selectedType=t.type==='Water'?'Work':t.type;selectedPriority=t.priority||'High';renderCategories();renderCategoryForm(legacyDetails(t));$('#fDate').value=t.date;$('#fTime').value=t.time;$('#fReminderDate').value=t.reminderDate||t.date;$('#fReminderTime').value=t.reminderTime||t.time;$('#fNotes').value=t.notes||'';$('#fRepeat').value=t.repeat||'Until Completed';$('#fStatus').value=t.done?'Completed':'Pending';$('#fileName').textContent=t.fileName||'Choose File / Add Image';$$('.priority-btn').forEach(b=>b.classList.toggle('active',b.dataset.priority===selectedPriority));closeTaskSheet();showScreen('add')}
 function renderAllData(){renderHome();renderAll();renderReports();renderWater();renderSettings()}
 function resetWaterDay(){const d=localDateKey();if(water.date!==d){water.date=d;water.ml=0;water.entries=[];scopedSet('ts_water',water)}}
-function renderWater(){resetWaterDay();$('#waterTarget').value=water.target;$('#waterInterval').value=water.interval;$('#waterMl').textContent=`${water.ml} ml`;$('#waterGoalText').innerHTML=`Today<br>${(water.ml/1000).toFixed(2)} / ${(water.target/1000).toFixed(1)} L`;$('#waterRing').style.setProperty('--p',`${Math.min(100,water.ml/water.target*100)}%`);$('#waterIntakeList').innerHTML=water.entries.length?water.entries.slice().reverse().map(e=>`<div class="intake-item"><span>💧</span><b>${e.ml} ml</b><span class="time">${esc(e.time)}</span></div>`).join(''):`<div class="empty" style="box-shadow:none;background:#f7fbff"><b>No water logged yet</b><span>Use Quick Add above.</span></div>`}
+function renderWater(){resetWaterDay();$('#waterTarget').value=water.target;$('#waterInterval').value=water.interval;$('#waterMl').textContent=`${water.ml} ml`;$('#waterGoalText').innerHTML=`Today<br>${(water.ml/1000).toFixed(2)} / ${(water.target/1000).toFixed(1)} L`;$('#waterRing').style.setProperty('--p',`${Math.min(100,water.ml/water.target*100)}%`);$('#waterIntakeList').innerHTML=water.entries.length?water.entries.map((e,i)=>({e,i})).reverse().map(({e,i})=>`<div class="intake-item"><span>💧</span><b>${e.ml} ml</b><span class="time">${esc(e.time||'')} <button class="water-entry-action" data-water-edit="${i}">Edit</button></span></div>`).join(''):`<div class="empty" style="box-shadow:none;background:#f7fbff"><b>No water logged yet</b><span>Use Quick Add above.</span></div>`}
 function addWater(ml){resetWaterDay();water.ml=Math.max(0,water.ml+ml);if(ml>0)water.entries.push({ml,time:new Date().toLocaleTimeString([], {hour:'numeric',minute:'2-digit'}),at:new Date().toISOString()});else if(ml<0&&water.entries.length)water.entries.pop();saveWater(ml>0?'water_added':'water_removed');renderWater();toast(ml>0?`${ml} ml added 💧`:'Last water entry removed')}
-function renderReports(){const total=tasks.length,pending=tasks.filter(t=>!t.done).length,completed=tasks.filter(t=>t.done).length,overdue=tasks.filter(isOverdue).length;$('#rTotal').textContent=total;$('#rPending').textContent=pending;$('#rCompleted').textContent=completed;$('#rOverdue').textContent=overdue;$('#categoryReport').innerHTML=Object.keys(CATEGORY_INFO).map(cat=>{const info=CATEGORY_INFO[cat],n=tasks.filter(t=>t.type===cat).length;const ico=info.icon==='rupee'?`<div class="r-ico ${info.cls}">₹</div>`:`<div class="r-ico ${info.cls}">${ICONS[info.icon]}</div>`;return `<div class="rowr">${ico}<span>${info.label}</span><strong>${n}</strong></div>`}).join('')}
-function soundLabel(mode=soundSettings.mode){return mode==='bell'?'Think Smaart Bell':mode==='chime'?'Soft Chime':mode==='alert'?'Strong Alert':mode==='custom'?(soundSettings.customName||'My Custom Sound'):'Silent'}
+function reportRange(){
+  const base=$('#reportDate')?.value?new Date($('#reportDate').value+'T12:00:00'):new Date();const start=new Date(base),end=new Date(base);
+  if(reportPeriod==='Daily'){}
+  else if(reportPeriod==='Weekly'){const d=(base.getDay()+6)%7;start.setDate(base.getDate()-d);end.setDate(start.getDate()+6)}
+  else if(reportPeriod==='Monthly'){start.setDate(1);end.setMonth(start.getMonth()+1,0)}
+  else if(reportPeriod==='Yearly'){start.setMonth(0,1);end.setMonth(11,31)}
+  start.setHours(0,0,0,0);end.setHours(23,59,59,999);return [start,end];
+}
+function renderReports(){const [start,end]=reportRange();const list=tasks.filter(t=>{const d=dueDate(t);return !isNaN(d)&&d>=start&&d<=end});const total=list.length,pending=list.filter(t=>!t.done).length,completed=list.filter(t=>t.done).length,overdue=list.filter(isOverdue).length;$('#rTotal').textContent=total;$('#rPending').textContent=pending;$('#rCompleted').textContent=completed;$('#rOverdue').textContent=overdue;$('#categoryReport').innerHTML=Object.keys(CATEGORY_INFO).map(cat=>{const info=CATEGORY_INFO[cat],n=list.filter(t=>t.type===cat).length;const ico=info.icon==='rupee'?`<div class="r-ico ${info.cls}">₹</div>`:`<div class="r-ico ${info.cls}">${ICONS[info.icon]}</div>`;return `<div class="rowr">${ico}<span>${info.label}</span><strong>${n}</strong></div>`}).join('')}
 function renderAvatar(){
   const initials=(profile.name||'U').trim().charAt(0).toUpperCase()||'U';
   const html=profile.photo?`<img src="${profile.photo}" alt="Profile photo">`:esc(initials);
@@ -709,7 +771,8 @@ function renderHealthModal(){
   $('#backToWorkPreview').textContent=formatTime12(backToWorkTime());
 }
 function updateHealthPreview(){const lunch=$('#lunchTime').value||'13:00',mins=Math.max(15,Number($('#lunchBreakMinutes').value)||90);const [h,m]=lunch.split(':').map(Number);const total=(h*60+m+mins)%(24*60);$('#backToWorkPreview').textContent=formatTime12(`${String(Math.floor(total/60)).padStart(2,'0')}:${String(total%60).padStart(2,'0')}`)}
-function renderSettings(){const p=('Notification' in window)?Notification.permission:'default';$('#settingsName').textContent=profile.name;const se=$('#settingsEmail');if(se)se.textContent=profile.email;const ss=$('#soundSummary');if(ss)ss.textContent=soundLabel();const hs=$('#healthScheduleSummary');if(hs)hs.textContent=healthSchedule.enabled===false?'Health alarms off':`${formatTime12(healthSchedule.breakfast)} • ${formatTime12(healthSchedule.lunch)} • ${formatTime12(healthSchedule.dinner)}`;renderAvatar();const sy=$('#syncSummary');if(sy)sy.textContent=!syncSettings.url?'Not connected':syncSettings.lastOk?`Synced ${formatSyncTime(syncSettings.lastAt)}`:'Connected • sync pending'}
+function soundLabel(mode=soundSettings.mode){const m=mode||'bell';if(m==='custom')return soundSettings.customName||'My Custom Sound';if(m==='chime')return 'Soft Chime';if(m==='alert')return 'Strong Alert';if(m==='silent')return 'Silent';return 'Think Smaart Bell'}
+function renderSettings(){const p=('Notification' in window)?Notification.permission:'default';$('#settingsName').textContent=profile.name;const se=$('#settingsEmail');if(se)se.textContent=profile.email;const sp=$('#settingsPhone');if(sp)sp.textContent=profile.phone?` • ${profile.phone}`:'';const ns=$('#notificationSummary');if(ns)ns.textContent=nativeAndroid()?'Android reminder permissions':p==='granted'?'Notifications enabled':p==='denied'?'Notifications blocked':'Tap to enable notifications';const ss=$('#soundSummary');if(ss)ss.textContent=soundLabel();const hs=$('#healthScheduleSummary');if(hs)hs.textContent=healthSchedule.enabled===false?'Health alarms off':`${formatTime12(healthSchedule.breakfast)} • ${formatTime12(healthSchedule.lunch)} • ${formatTime12(healthSchedule.dinner)}`;const th=$('#themeSummary');if(th){const names={smart:'Think Smaart',light:'Light',dark:'Dark'},sizes={0.92:'Small',1:'Normal',1.08:'Large',1.16:'Extra Large'};th.textContent=`${names[uiSettings.theme]||'Think Smaart'} • ${sizes[uiSettings.textScale]||'Normal'} text`}const rs=$('#ratingSummary'),rating=Number(store.get(scopedKey('ts_app_rating'),0))||0;if(rs)rs.textContent=rating?`${rating}/5 stars saved`:'Tap to rate Think Smaart';renderAvatar();const sy=$('#syncSummary');if(sy)sy.textContent=!syncSettings.url?'Not connected':syncSettings.lastOk?`Synced ${formatSyncTime(syncSettings.lastAt)}`:'Connected • sync pending'}
 function getAudioContext(){if(!audioCtx){const AC=window.AudioContext||window.webkitAudioContext;if(AC)audioCtx=new AC()}return audioCtx}
 async function unlockAudio(){try{const c=getAudioContext();if(c&&c.state==='suspended')await c.resume();audioUnlocked=!!c}catch{} }
 function vibrateReminder(){if(soundSettings.vibrate&&navigator.vibrate)try{navigator.vibrate([240,110,240])}catch{}}
@@ -783,7 +846,7 @@ async function verifyLocalCredential(user,password){
 }
 function finishLogin(user,remember=true,snapshot=null){
   loadUserData(user);
-  if(snapshot&&Array.isArray(snapshot.tasks)){tasks=snapshot.tasks.map(t=>({...t,reminderDate:t.reminderDate||t.date,reminderTime:t.reminderTime||t.time}));scopedSet('ts_tasks',tasks)}
+  if(snapshot&&Array.isArray(snapshot.tasks)){tasks=snapshot.tasks.map(t=>({...t,id:String(t.id??Date.now()),reminderDate:t.reminderDate||t.date,reminderTime:t.reminderTime||t.time}));scopedSet('ts_tasks',tasks)}
   if(snapshot&&snapshot.water){water={...DEFAULT_WATER,...snapshot.water};scopedSet('ts_water',water)}
   if(snapshot&&snapshot.healthSchedule){healthSchedule={...DEFAULT_HEALTH,...snapshot.healthSchedule};scopedSet('ts_health_schedule',healthSchedule)}
   saveProfile();
@@ -839,6 +902,13 @@ async function resetPassword(){
   finally{b.disabled=false;b.textContent='Reset Password'}
 }
 
+function openProfileEditor(){const pn=$('#profileName'),pe=$('#profileEmail'),pp=$('#profilePhone');if(pn)pn.value=profile.name||'';if(pe)pe.value=profile.email||'';if(pp)pp.value=profile.phone||'';renderAvatar();$('#profileModal').classList.add('show')}
+function openNotificationsSettings(){const dot=$('#notificationStatusDot'),title=$('#notificationStatusTitle'),txt=$('#notificationStatusText');if(nativeAndroid()){dot.className='status-dot ok';title.textContent='Android Reminder Permissions';txt.textContent='Tap Enable / Fix Permissions to verify notification, exact alarm and full-screen alert access.'}else{const p=('Notification'in window)?Notification.permission:'unsupported';dot.className='status-dot '+(p==='granted'?'ok':'');title.textContent=p==='granted'?'Notifications Enabled':'Notifications Need Attention';txt.textContent=p==='granted'?'Browser notifications are allowed.':'Tap Enable / Fix Permissions to request access.'}$('#notificationsModal').classList.add('show')}
+function closeNotificationsSettings(){$('#notificationsModal').classList.remove('show')}
+function openRating(){const rating=Number(store.get(scopedKey('ts_app_rating'),0))||0;$$('#ratingStars .rating-star').forEach(b=>b.classList.toggle('active',Number(b.dataset.rating)<=rating));$('#rateModal').dataset.rating=String(rating);$('#rateModal').classList.add('show')}
+function appShareText(){return 'Think Smaart Reminder – Business, Payment, Delivery, Follow-up, Vendor, Water & Health reminder app. Think Smaart: https://www.thinksmaart.com'}
+async function shareThinkSmaart(){const text=appShareText();if(navigator.share){try{await navigator.share({title:'Think Smaart Reminder',text,url:'https://www.thinksmaart.com'});toast('Share sheet opened');return}catch(e){if(e&&e.name==='AbortError')return}}try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(text);toast('App share details copied')}else{const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();toast('App share details copied')}}catch{toast('Share details copy avvaledu')}}
+
 // events
 $('#loginForm').addEventListener('submit',e=>{e.preventDefault();tryLogin()});
 $('#signupForm').addEventListener('submit',e=>{e.preventDefault();trySignup()});
@@ -859,32 +929,39 @@ $('#bottomNav').addEventListener('click',e=>{const b=e.target.closest('[data-nav
 $('#fabAdd').addEventListener('click',()=>openAdd('Work'));document.addEventListener('click',e=>{const r=e.target.closest('[data-task]');if(r)openTaskSheet(r.dataset.task)});
 $('#reminderFilters').addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;filter=b.dataset.filter;$$('#reminderFilters .chip').forEach(x=>x.classList.toggle('active',x===b));renderAll()});
 $('#sheetCancel').addEventListener('click',closeTaskSheet);$('#actionModal').addEventListener('click',e=>{if(e.target===$('#actionModal'))closeTaskSheet()});
-$('#sheetComplete').addEventListener('click',()=>{const t=tasks.find(x=>x.id===activeTaskId);if(t){t.done=!t.done;saveTasks(t.done?'reminder_completed':'reminder_reopened');t.done?nativeCancelTask(t.id):nativeScheduleTask(t);renderAllData()}closeTaskSheet()});
-$('#sheetDelete').addEventListener('click',()=>{nativeCancelTask(activeTaskId);tasks=tasks.filter(x=>x.id!==activeTaskId);saveTasks('reminder_deleted');renderAllData();closeTaskSheet();toast('Reminder deleted')});
-$('#sheetSnooze').addEventListener('click',()=>{const t=tasks.find(x=>x.id===activeTaskId);if(t){const d=new Date(Date.now()+30*60000);t.reminderDate=localDateKey(d);t.reminderTime=`${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;t.done=false;saveTasks('reminder_snoozed');nativeScheduleTask(t);renderAllData();toast('Alarm snoozed 30 minutes • due date unchanged')}closeTaskSheet()});
+$('#sheetComplete').addEventListener('click',()=>{const t=tasks.find(x=>String(x.id)===String(activeTaskId));if(t){t.done=!t.done;saveTasks(t.done?'reminder_completed':'reminder_reopened');t.done?nativeCancelTask(t.id):nativeScheduleTask(t);renderAllData()}closeTaskSheet()});
+$('#sheetDelete').addEventListener('click',()=>{nativeCancelTask(activeTaskId);tasks=tasks.filter(x=>String(x.id)!==String(activeTaskId));saveTasks('reminder_deleted');renderAllData();closeTaskSheet();toast('Reminder deleted')});
+$('#sheetSnooze').addEventListener('click',()=>{const t=tasks.find(x=>String(x.id)===String(activeTaskId));if(t){const d=new Date(Date.now()+30*60000);t.reminderDate=localDateKey(d);t.reminderTime=`${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;t.done=false;saveTasks('reminder_snoozed');nativeScheduleTask(t);renderAllData();toast('Alarm snoozed 30 minutes • due date unchanged')}closeTaskSheet()});
 $('#sheetEdit').addEventListener('click',()=>editTask(activeTaskId));
 $$('.quick-btn').forEach(b=>b.addEventListener('click',()=>{quickMl=Number(b.dataset.ml);$$('.quick-btn').forEach(x=>x.classList.toggle('active',x===b))}));$('#waterPlus').addEventListener('click',()=>addWater(quickMl));$('#waterMinus').addEventListener('click',()=>addWater(-quickMl));
-$('#waterTarget').addEventListener('change',e=>{water.target=Math.max(500,Number(e.target.value)||3000);saveWater('water_target');renderWater()});$('#waterInterval').addEventListener('change',e=>{water.interval=Math.max(30,Number(e.target.value)||60);saveWater('water_interval');nativeScheduleWater()});$('#waterNotify').addEventListener('click',()=>{askNotifications();nativeScheduleWater()});$('#notifyBtn').addEventListener('click',askNotifications);$('#settingsNotifications').addEventListener('click',askNotifications);
-$('#editProfile').addEventListener('click',()=>{$('#profileName').value=profile.name;$('#profileEmail').value=profile.email||'';renderAvatar();$('#profileModal').classList.add('show')});
+$('#waterTarget').addEventListener('change',e=>{water.target=Math.max(500,Number(e.target.value)||3000);saveWater('water_target');renderWater()});$('#waterInterval').addEventListener('change',e=>{water.interval=Math.max(30,Number(e.target.value)||60);saveWater('water_interval');nativeScheduleWater()});$('#waterNotify').addEventListener('click',()=>{askNotifications();nativeScheduleWater()});$('#notifyBtn').addEventListener('click',askNotifications);$('#settingsNotifications').addEventListener('click',openNotificationsSettings);
+$('#editProfile').addEventListener('click',openProfileEditor);$('#profileHeader').addEventListener('click',openProfileEditor);
 $('#profileModal').addEventListener('click',e=>{if(e.target===$('#profileModal'))$('#profileModal').classList.remove('show')});
 async function compressProfilePhoto(file){
   if(!file||!file.type.startsWith('image/'))throw new Error('image');
   const data=await new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(file)});
   const img=await new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=rej;i.src=data});
-  const size=320,c=document.createElement('canvas');c.width=size;c.height=size;const ctx=c.getContext('2d');
+  const size=500,c=document.createElement('canvas');c.width=size;c.height=size;const ctx=c.getContext('2d');
   const scale=Math.max(size/img.width,size/img.height),w=img.width*scale,h=img.height*scale;ctx.drawImage(img,(size-w)/2,(size-h)/2,w,h);
-  return c.toDataURL('image/jpeg',.82);
+  return c.toDataURL('image/jpeg',.86);
 }
-$('#profilePhotoFile').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>8*1024*1024){toast('Profile photo 8 MB kanna takkuva undali.');return}profile.photo=await compressProfilePhoto(f);renderAvatar();toast('Profile photo selected')}catch{toast('Valid image select cheyyandi.')}});
+$('#profilePhotoFile').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>5*1024*1024){toast('Profile photo maximum 5 MB undali. Recommended 500 × 500 px.');return}profile.photo=await compressProfilePhoto(f);renderAvatar();toast('Profile photo selected')}catch{toast('Valid image select cheyyandi.')}});
 $('#removeProfilePhoto').addEventListener('click',()=>{profile.photo='';renderAvatar();toast('Profile photo removed')});
-$('#profileSave').addEventListener('click',()=>{profile.name=$('#profileName').value.trim()||'Srinivasulu';saveProfile();queueCloudSync('profile_updated');$('#profileModal').classList.remove('show');renderAllData();toast('Profile saved')});
+$('#profileSave').addEventListener('click',()=>{const name=$('#profileName').value.trim(),email=$('#profileEmail').value.trim().toLowerCase(),phone=$('#profilePhone').value.replace(/\D/g,'');if(name.length<2){toast('Valid name enter cheyyandi');return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){toast('Valid email enter cheyyandi');return}if(phone&&phone.length!==10){toast('Mobile number 10 digits undali');return}profile={...profile,name,email,phone};saveProfile();const users=getUsers(),i=users.findIndex(u=>String(u.id)===String(profile.userId));if(i>=0){users[i]={...users[i],name,email,phone};setUsers(users)}queueCloudSync('profile_updated');$('#profileModal').classList.remove('show');renderAllData();toast('Profile updated')});
 $('#backupSetting').addEventListener('click',()=>{renderSyncModal();$('#syncModal').classList.add('show')});
 $('#healthScheduleSetting').addEventListener('click',()=>{renderHealthModal();$('#healthScheduleModal').classList.add('show')});
 $('#healthScheduleModal').addEventListener('click',e=>{if(e.target===$('#healthScheduleModal'))$('#healthScheduleModal').classList.remove('show')});
 $('#lunchTime').addEventListener('input',updateHealthPreview);$('#lunchBreakMinutes').addEventListener('input',updateHealthPreview);
 $('#saveHealthSchedule').addEventListener('click',()=>{healthSchedule={enabled:$('#healthEnabled').checked,breakfast:$('#breakfastTime').value||'08:00',lunch:$('#lunchTime').value||'13:00',dinner:$('#dinnerTime').value||'20:00',breakMinutes:Math.max(15,Math.min(240,Number($('#lunchBreakMinutes').value)||90))};saveHealth('health_schedule_changed');nativeRequestPermissions();nativeScheduleHealth();renderSettings();$('#healthScheduleModal').classList.remove('show');toast(healthSchedule.enabled?'Daily meal & back-to-work alarms saved':'Health alarms turned off')});
 $('#syncModal').addEventListener('click',e=>{if(e.target===$('#syncModal'))$('#syncModal').classList.remove('show')});
-$('#saveSyncSettings').addEventListener('click',()=>{syncSettings={...syncSettings,url:BUILT_IN_SYNC_URL,key:BUILT_IN_SYNC_KEY,enabled:true,lastOk:false,lastMessage:'Syncing...'};store.set('ts_sync_settings',syncSettings);try{if(nativeAndroid())window.NativeApp.setGoogleSheetsConfig(BUILT_IN_SYNC_URL,BUILT_IN_SYNC_KEY)}catch{}renderSettings();renderSyncModal();cloudSync('manual_sync',true)});$('#soundSetting').addEventListener('click',openSoundSettings);$('#themeSetting').addEventListener('click',()=>toast('Think Smaart logo-colour theme active'));$('#aboutApp').addEventListener('click',()=>toast('Think Smaart Reminder V14 • Auto UI updates enabled • Business + Water + Health'));
+$('#saveSyncSettings').addEventListener('click',()=>{syncSettings={...syncSettings,url:BUILT_IN_SYNC_URL,key:BUILT_IN_SYNC_KEY,enabled:true,lastOk:false,lastMessage:'Syncing...'};store.set('ts_sync_settings',syncSettings);try{if(nativeAndroid())window.NativeApp.setGoogleSheetsConfig(BUILT_IN_SYNC_URL,BUILT_IN_SYNC_KEY)}catch{}renderSettings();renderSyncModal();cloudSync('manual_sync',true)});$('#soundSetting').addEventListener('click',openSoundSettings);$('#themeSetting').addEventListener('click',()=>{uiSettings=store.get(scopedKey('ts_ui_settings'),{...DEFAULT_UI});$$('#themeChoices .theme-choice').forEach(b=>b.classList.toggle('active',b.dataset.theme===uiSettings.theme));$('#uiTextSize').value=String(uiSettings.textScale||1);$('#themeModal').classList.add('show')});$('#aboutApp').addEventListener('click',()=>$('#aboutModal').classList.add('show'));
+$('#themeChoices').addEventListener('click',e=>{const b=e.target.closest('[data-theme]');if(!b)return;uiSettings.theme=b.dataset.theme;$$('#themeChoices .theme-choice').forEach(x=>x.classList.toggle('active',x===b));applyUiSettings()});
+$('#saveTheme').addEventListener('click',()=>{uiSettings.textScale=Number($('#uiTextSize').value)||1;saveUiSettings();$('#themeModal').classList.remove('show');toast('Appearance saved')});
+$('#themeModal').addEventListener('click',e=>{if(e.target===$('#themeModal'))$('#themeModal').classList.remove('show')});
+$('#waterIntakeList').addEventListener('click',e=>{const b=e.target.closest('[data-water-edit]');if(!b)return;const i=Number(b.dataset.waterEdit),x=water.entries[i];if(!x)return;$('#waterEditIndex').value=String(i);$('#waterEditMl').value=String(x.ml||0);let tm='';if(x.at){const d=new Date(x.at);if(!isNaN(d))tm=`${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`}$('#waterEditTime').value=tm;$('#waterEditModal').classList.add('show')});
+$('#saveWaterEntry').addEventListener('click',()=>{const i=Number($('#waterEditIndex').value),ml=Math.max(0,Number($('#waterEditMl').value)||0);if(!water.entries[i])return;const old=Number(water.entries[i].ml)||0;water.entries[i].ml=ml;const tm=$('#waterEditTime').value;if(tm){const d=new Date(water.entries[i].at||Date.now()),[h,m]=tm.split(':').map(Number);d.setHours(h,m,0,0);water.entries[i].at=d.toISOString();water.entries[i].time=d.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'})}water.ml=Math.max(0,(Number(water.ml)||0)-old+ml);saveWater('water_entry_updated');renderWater();$('#waterEditModal').classList.remove('show');toast('Water entry updated')});
+$('#deleteWaterEntry').addEventListener('click',()=>{const i=Number($('#waterEditIndex').value);if(!water.entries[i])return;water.ml=Math.max(0,(Number(water.ml)||0)-(Number(water.entries[i].ml)||0));water.entries.splice(i,1);saveWater('water_entry_deleted');renderWater();$('#waterEditModal').classList.remove('show');toast('Water entry deleted')});
+$('#waterEditModal').addEventListener('click',e=>{if(e.target===$('#waterEditModal'))$('#waterEditModal').classList.remove('show')});
 $('#soundModal').addEventListener('click',e=>{if(e.target===$('#soundModal'))closeSoundSettings()});
 $('#soundChoices').addEventListener('click',e=>{const b=e.target.closest('[data-sound-mode]');if(!b)return;soundSettings.mode=b.dataset.soundMode;$$('#soundChoices .sound-choice').forEach(x=>x.classList.toggle('active',x===b));$('#soundCurrentTitle').textContent=soundLabel(soundSettings.mode);$('#soundCurrentFile').textContent=soundSettings.mode==='custom'?(soundSettings.customName||'Upload your sound below'):'Built-in reminder sound'});
 $('#customSoundFile').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;if(file.size>25*1024*1024){toast('Sound file 25 MB kanna takkuva undali.');e.target.value='';return}if(file.type&&!file.type.startsWith('audio/')){toast('Audio file select cheyyandi.');e.target.value='';return}try{await saveCustomSoundBlob(file);soundSettings.customName=file.name;soundSettings.mode='custom';saveSound('sound_changed');if(nativeAndroid()){const reader=new FileReader();reader.onload=()=>{try{window.NativeApp.saveCustomSound(String(reader.result||''),file.type||'audio/*',file.name)}catch{}};reader.readAsDataURL(file)}$('#customSoundFileName').textContent=file.name;$('#soundCurrentTitle').textContent=file.name;$('#soundCurrentFile').textContent='My custom reminder sound';$('#removeCustomSound').disabled=false;$$('#soundChoices .sound-choice').forEach(x=>x.classList.toggle('active',x.dataset.soundMode==='custom'));toast('Custom sound added');await playReminderSound(true)}catch{toast('Sound save avvaledu. Vere audio file try cheyyandi.')}});
@@ -892,14 +969,20 @@ $('#previewSound').addEventListener('click',()=>playReminderSound(true));
 $('#removeCustomSound').addEventListener('click',async()=>{await deleteCustomSoundBlob();try{if(nativeAndroid())window.NativeApp.removeCustomSound()}catch{}soundSettings.customName='';if(soundSettings.mode==='custom')soundSettings.mode='bell';saveSound('sound_changed');nativeApplySoundSettings();$('#customSoundFile').value='';$('#customSoundFileName').textContent='No custom sound selected';$('#soundCurrentTitle').textContent=soundLabel();$('#soundCurrentFile').textContent='Built-in reminder sound';$('#removeCustomSound').disabled=true;$$('#soundChoices .sound-choice').forEach(x=>x.classList.toggle('active',x.dataset.soundMode===soundSettings.mode));renderSettings();toast('Custom sound removed')});
 $('#soundVolume').addEventListener('input',e=>{$('#soundVolumeText').textContent=`${e.target.value}%`});
 $('#saveSoundSettings').addEventListener('click',async()=>{soundSettings.volume=Number($('#soundVolume').value)||0;soundSettings.vibrate=$('#soundVibrate').checked;if(soundSettings.mode==='custom'){const rec=await getCustomSoundRecord();if(!rec){toast('Custom sound select chesaru. Mundu audio file upload cheyyandi.');return}}saveSound('sound_changed');nativeApplySoundSettings();renderSettings();closeSoundSettings();toast('Reminder sound saved')});
-$('#rateApp').addEventListener('click',()=>toast('Rate App option final published version lo active avutundi.'));
-$('#shareApp').addEventListener('click',async()=>{if(navigator.share){try{await navigator.share({title:'Think Smaart Reminder',text:'Business + Water Reminder App'})}catch{}}else toast('Share option device/browser support avasaram.')});
-$('#privacyPolicy').addEventListener('click',()=>toast('Passwords are never stored as readable text. Google Sheets stores only protected password verification data; Forgot Password uses an email reset code.'));
+$('#rateApp').addEventListener('click',openRating);
+$('#ratingStars').addEventListener('click',e=>{const b=e.target.closest('[data-rating]');if(!b)return;const r=Number(b.dataset.rating)||0;$('#rateModal').dataset.rating=String(r);$$('#ratingStars .rating-star').forEach(x=>x.classList.toggle('active',Number(x.dataset.rating)<=r))});
+$('#saveRating').addEventListener('click',()=>{const r=Number($('#rateModal').dataset.rating)||0;if(!r){toast('1 nundi 5 stars select cheyyandi');return}store.set(scopedKey('ts_app_rating'),r);queueCloudSync('app_rating');$('#rateModal').classList.remove('show');renderSettings();toast(`Thank you • ${r}/5 rating saved`)});
+$('#rateModal').addEventListener('click',e=>{if(e.target===$('#rateModal'))$('#rateModal').classList.remove('show')});
+$('#shareApp').addEventListener('click',shareThinkSmaart);
+$('#privacyPolicy').addEventListener('click',()=>$('#privacyModal').classList.add('show'));
+$('#closePrivacy').addEventListener('click',()=>$('#privacyModal').classList.remove('show'));$('#privacyModal').addEventListener('click',e=>{if(e.target===$('#privacyModal'))$('#privacyModal').classList.remove('show')});
+$('#closeAbout').addEventListener('click',()=>$('#aboutModal').classList.remove('show'));$('#aboutModal').addEventListener('click',e=>{if(e.target===$('#aboutModal'))$('#aboutModal').classList.remove('show')});
+$('#enableNotifications').addEventListener('click',async()=>{await askNotifications();renderSettings();openNotificationsSettings()});$('#closeNotifications').addEventListener('click',closeNotificationsSettings);$('#notificationsModal').addEventListener('click',e=>{if(e.target===$('#notificationsModal'))closeNotificationsSettings()});
 $('#logoutBtn').addEventListener('click',()=>logoutUser());
 $('#menuBtn').addEventListener('click',()=>showScreen('settings'));
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e});
 $('#reportDate').value=localDateKey();
-$('#reportPeriod').addEventListener('click',e=>{const b=e.target.closest('[data-period]');if(!b)return;$$('#reportPeriod .chip').forEach(x=>x.classList.toggle('active',x===b));toast(`${b.dataset.period} report selected`)});
+$('#reportPeriod').addEventListener('click',e=>{const b=e.target.closest('[data-period]');if(!b)return;reportPeriod=b.dataset.period;$$('#reportPeriod .chip').forEach(x=>x.classList.toggle('active',x===b));renderReports()});$('#reportDate').addEventListener('change',renderReports);
 document.addEventListener('pointerdown',unlockAudio,{once:true});
 if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
 updateClock();setInterval(updateClock,30000);setInterval(checkDueNotifications,30000);renderCategories();resetForm();renderCategoryForm();
